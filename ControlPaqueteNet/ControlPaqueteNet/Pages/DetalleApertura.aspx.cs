@@ -72,5 +72,10 @@ namespace ControlPaqueteNet.Pages
                 this.Configuracion();
             }
         }
+
+        protected void ibAtras_Click1(object sender, ImageClickEventArgs e)
+        {
+            ibAtras_Click(sender, e);
+        }
     }
 }

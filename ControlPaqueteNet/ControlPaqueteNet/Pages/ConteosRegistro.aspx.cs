@@ -104,5 +104,10 @@ namespace ControlPaqueteNet.Pages
                 this.CrearGrilla();
             }
         }
+
+        protected void grRegistro_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            grRegistro_SelectedIndexChanged(sender, e);
+        }
     }
 }

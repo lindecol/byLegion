@@ -30,7 +30,7 @@
                         </asp:UpdateProgress>
                         <br />
                         <%--Grilla donde mostraremos los datos--%>
-                        <asp:GridView ID="grRegistro" runat="server" AutoGenerateColumns="False" AllowSorting="True" Width="750px">
+                        <asp:GridView ID="grRegistro" runat="server" AutoGenerateColumns="False" AllowSorting="True" Width="750px" OnSelectedIndexChanged="grRegistro_SelectedIndexChanged1">
                             <Columns>
                                 <asp:BoundField DataField="CodigoConteo" HeaderText="C&#243;digo" >
                                     <ControlStyle Width="100px" />

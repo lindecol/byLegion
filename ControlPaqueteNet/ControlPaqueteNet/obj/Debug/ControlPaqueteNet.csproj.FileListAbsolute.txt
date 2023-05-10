@@ -197,6 +197,7 @@ C:\Proyectos\Praxair\ControlPaquete\ControlPaqueteNet\obj\Debug\ControlPaqueteNe
 C:\Proyectos\Praxair\ControlPaquete\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.dll
 C:\Proyectos\Praxair\ControlPaquete\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.pdb
 C:\Proyectos\Praxair\ControlPaquete\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.AssemblyReference.cache
+C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.CoreCompileInputs.cache
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\SqlServerTypes\x64\msvcr120.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\SqlServerTypes\x86\msvcr120.dll
@@ -295,7 +296,6 @@ C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bi
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\Microsoft.Data.OData.xml
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\Microsoft.WindowsAzure.Storage.pdb
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\Microsoft.WindowsAzure.Storage.xml
-C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\Reportes.pdb
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\System.Spatial.xml
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\System.Web.Optimization.xml
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\Newtonsoft.Json.xml
@@ -391,7 +391,6 @@ C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bi
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.AssemblyReference.cache
-C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.CoreCompileInputs.cache
+C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.CopyComplete
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.pdb

@@ -42,7 +42,7 @@
                 <tr>
                     <td valign="top" align="left">
                         <%--Botón para ir atrás--%>
-                        <asp:ImageButton ID="ibAtras" runat="server" ImageUrl="~/Images/Atras.GIF" Width="24px" ToolTip="Atrás" />
+                        <asp:ImageButton ID="ibAtras" runat="server" ImageUrl="~/Images/Atras.GIF" Width="24px" ToolTip="Atrás" OnClick="ibAtras_Click1" />
                     </td>
                 </tr>
                 <tr>

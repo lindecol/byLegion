@@ -189,6 +189,9 @@
     <Content Include="Pages\Bloqueo.aspx" />
     <Content Include="Pages\ConsultaConteos.aspx" />
     <Content Include="Pages\ConteosDiferencia.aspx" />
+    <Content Include="Pages\ConteosDispActivos.aspx" />
+    <Content Include="Pages\ConteosDispMixto.aspx" />
+    <Content Include="Pages\ConteosDispProductos.aspx" />
     <Content Include="Pages\ConteosRegistro.aspx" />
     <Content Include="Pages\ConteosReprogramacion.aspx" />
     <Content Include="Pages\Default.aspx" />
@@ -212,17 +215,24 @@
     <Content Include="Pages\mnMenu.ascx" />
     <Content Include="Pages\motivoAnulacion.aspx" />
     <Content Include="Pages\motivoDiferencia.aspx" />
+    <Content Include="Pages\pagCierrePapeleria.aspx" />
     <Content Include="Pages\ProgramacionConteo.aspx" />
+    <Content Include="Pages\RegistroDiferenciaActivos.aspx" />
+    <Content Include="Pages\RegistroDiferenciaMixto.aspx" />
+    <Content Include="Pages\RegistroDiferenciaProductos.aspx" />
+    <Content Include="Pages\RegistroManualActivos.aspx" />
+    <Content Include="Pages\RegistroManualMixtos.aspx" />
+    <Content Include="Pages\RegistroManualProductos.aspx" />
     <Content Include="Pages\ReporteCierreLastro.aspx" />
     <Content Include="Pages\ReporteConteoRealizado.aspx" />
     <Content Include="Pages\ReporteDiferencia.aspx" />
     <Content Include="Pages\ReporteEstadistica.aspx" />
     <Content Include="Pages\ReporteSubdeposito.aspx" />
+    <Content Include="Pages\ReprogramacionConteo.aspx" />
     <Content Include="Pages\salir.aspx" />
     <Content Include="Pages\Sectores.aspx" />
     <Content Include="Pages\SectoresPorSucursal.aspx" />
     <Content Include="Pages\Subdepositos.aspx" />
-    <Content Include="Pages\_salir.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Connected Services\WsPraxair\Service.wsdl" />
     <Content Include="Pages\MasterPage.Master" />
@@ -395,6 +405,27 @@
     <Compile Include="Pages\ConteosDiferencia.aspx.designer.cs">
       <DependentUpon>ConteosDiferencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ConteosDispActivos.aspx.cs">
+      <DependentUpon>ConteosDispActivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConteosDispActivos.aspx.designer.cs">
+      <DependentUpon>ConteosDispActivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConteosDispMixto.aspx.cs">
+      <DependentUpon>ConteosDispMixto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConteosDispMixto.aspx.designer.cs">
+      <DependentUpon>ConteosDispMixto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConteosDispProductos.aspx.cs">
+      <DependentUpon>ConteosDispProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConteosDispProductos.aspx.designer.cs">
+      <DependentUpon>ConteosDispProductos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConteosRegistro.aspx.cs">
       <DependentUpon>ConteosRegistro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -489,12 +520,61 @@
     <Compile Include="Pages\motivoDiferencia.aspx.designer.cs">
       <DependentUpon>motivoDiferencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\pagCierrePapeleria.aspx.cs">
+      <DependentUpon>pagCierrePapeleria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\pagCierrePapeleria.aspx.designer.cs">
+      <DependentUpon>pagCierrePapeleria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProgramacionConteo.aspx.cs">
       <DependentUpon>ProgramacionConteo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\ProgramacionConteo.aspx.designer.cs">
       <DependentUpon>ProgramacionConteo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaActivos.aspx.cs">
+      <DependentUpon>RegistroDiferenciaActivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaActivos.aspx.designer.cs">
+      <DependentUpon>RegistroDiferenciaActivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaMixto.aspx.cs">
+      <DependentUpon>RegistroDiferenciaMixto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaMixto.aspx.designer.cs">
+      <DependentUpon>RegistroDiferenciaMixto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaProductos.aspx.cs">
+      <DependentUpon>RegistroDiferenciaProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroDiferenciaProductos.aspx.designer.cs">
+      <DependentUpon>RegistroDiferenciaProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroManualActivos.aspx.cs">
+      <DependentUpon>RegistroManualActivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroManualActivos.aspx.designer.cs">
+      <DependentUpon>RegistroManualActivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroManualMixtos.aspx.cs">
+      <DependentUpon>RegistroManualMixtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroManualMixtos.aspx.designer.cs">
+      <DependentUpon>RegistroManualMixtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistroManualProductos.aspx.cs">
+      <DependentUpon>RegistroManualProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\RegistroManualProductos.aspx.designer.cs">
+      <DependentUpon>RegistroManualProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ReporteCierreLastro.aspx.cs">
       <DependentUpon>ReporteCierreLastro.aspx</DependentUpon>
@@ -530,6 +610,13 @@
     </Compile>
     <Compile Include="Pages\ReporteSubdeposito.aspx.designer.cs">
       <DependentUpon>ReporteSubdeposito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReprogramacionConteo.aspx.cs">
+      <DependentUpon>ReprogramacionConteo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReprogramacionConteo.aspx.designer.cs">
+      <DependentUpon>ReprogramacionConteo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\salir.aspx.cs">
       <DependentUpon>salir.aspx</DependentUpon>
