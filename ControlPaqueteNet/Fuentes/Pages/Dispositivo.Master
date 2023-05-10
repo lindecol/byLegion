@@ -1,0 +1,51 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Dispositivo.master.vb" Inherits="ControlPaquete.Dispositivo" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Control de Producto por Paquetes - Praxair</title>
+
+    <link rel="stylesheet" type="text/css" href="Menu/ddlevelsmenu-base.css" />
+    <link rel="stylesheet" type="text/css" href="Menu/ddlevelsmenu-topbar.css" />
+    <link rel="stylesheet" type="text/css" href="Menu/ddlevelsmenu-sidebar.css" />
+ 
+    <script type="text/javascript" src="Menu/ddlevelsmenu.js"> 
+ 
+    </script>
+    
+    <style type="text/css">
+		body {font-family: Verdana; font-size: Small; margin: 20px; ForeColor: Teal; Font-Bold: True;}
+		.title {font-size: X-Large; padding: 20px; border-bottom: 2px solid gray;}
+	</style>
+</head>
+<body onload="document.forms[0].txtSerial.focus()">
+    <form id="form1" runat="server">
+    <div>
+        <table style="width: 150px">
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/header_bg.jpg" Width="100px" Height="30" />
+                        <br />
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/floor_bg.JPG" Width="100px" Height="30" />
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

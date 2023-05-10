@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="Conexion_Oracle">
+      <rd:DataSourceID>19740e25-f756-4c2a-b387-b94120b86c64</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>ORACLE</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="secuencia">
+      <DataType>Float</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ruta">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="subdeposito">
+      <DataType>Float</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="producto">
+      <DataType>Float</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>2cm</Top>
+        <Width>7cm</Width>
+        <Style>
+          <FontSize>16pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>7cm</Left>
+        <Value>Detalle Movimiento</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>Fit</Sizing>
+        <Width>19cm</Width>
+        <MIMEType>image/jpeg</MIMEType>
+        <Source>Embedded</Source>
+        <Style />
+        <Height>1.85185cm</Height>
+        <Value>header_bg</Value>
+      </Image>
+    </ReportItems>
+    <Height>2.91429cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>8d1bfdbd-40b9-4480-a197-b41825092ba7</rd:ReportID>
+  <EmbeddedImages>
+    <EmbeddedImage Name="header_bg">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <PageWidth>29.7cm</PageWidth>
+  <DataSets>
+    <DataSet Name="principal_detalle_subdeposito">
+      <Fields>
+        <Field Name="SECUENCIA">
+          <DataField>SECUENCIA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CODIGO_RUTA">
+          <DataField>CODIGO_RUTA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CODIGO_SUBDEPOSITO">
+          <DataField>CODIGO_SUBDEPOSITO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NUMERO_DOCUMENTO">
+          <DataField>NUMERO_DOCUMENTO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CODIGO_PRODUCTO">
+          <DataField>CODIGO_PRODUCTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOMBRE_PRODUCTO">
+          <DataField>NOMBRE_PRODUCTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FECHA_MOVIMIENTO">
+          <DataField>FECHA_MOVIMIENTO</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="CANTIDAD_ENTRADA">
+          <DataField>CANTIDAD_ENTRADA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CANTIDAD_SALIDA">
+          <DataField>CANTIDAD_SALIDA</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CANTIDAD_SALDO">
+          <DataField>CANTIDAD_SALDO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>Conexion_Oracle</DataSourceName>
+        <CommandText>SELECT     SECUENCIA, CODIGO_RUTA, CODIGO_SUBDEPOSITO, NUMERO_DOCUMENTO, CODIGO_PRODUCTO, NOMBRE_PRODUCTO, FECHA_MOVIMIENTO, 
+                      CANTIDAD_ENTRADA, CANTIDAD_SALIDA, CANTIDAD_SALDO
+FROM         OCPP_DETALLE_SUBDEPOSITO_REP</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>principal</rd:DataSetName>
+        <rd:TableName>detalle_subdeposito</rd:TableName>
+        <rd:TableAdapterName>detalle_subdepositoTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Width>19.25cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>principal_detalle_subdeposito</DataSetName>
+        <Top>0.25cm</Top>
+        <Width>19.08333cm</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CODIGO_PRODUCTO">
+                      <rd:DefaultName>CODIGO_PRODUCTO</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CODIGO_PRODUCTO.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="FECHA_MOVIMIENTO">
+                      <rd:DefaultName>FECHA_MOVIMIENTO</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FECHA_MOVIMIENTO.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CANTIDAD_ENTRADA">
+                      <rd:DefaultName>CANTIDAD_ENTRADA</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CANTIDAD_ENTRADA.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CANTIDAD_SALIDA">
+                      <rd:DefaultName>CANTIDAD_SALIDA</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CANTIDAD_SALIDA.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CANTIDAD_SALDO">
+                      <rd:DefaultName>CANTIDAD_SALDO</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CANTIDAD_SALDO.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>Green</BackgroundColor>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Producto</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>Green</BackgroundColor>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Fecha</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>Green</BackgroundColor>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Entradas</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>Green</BackgroundColor>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Salidas</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>Green</BackgroundColor>
+                        <BorderColor>
+                          <Default>Silver</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Saldo</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>5.33333cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.75cm</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>1.51984cm</Height>
+  </Body>
+  <Language>es-ES</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

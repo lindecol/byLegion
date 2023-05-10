@@ -1,0 +1,3421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnularConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MotivoAnulacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnularConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AnularConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AbrirConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AbrirConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AbrirConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearRegistroConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarea" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearRegistroConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BloquearRegistroConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CerrarConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCierre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Encargado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearCierreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearCierreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFestivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarFestivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarFestivosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarFestivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esFestivoSabado" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="chkSabado" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="esFestivoDomingo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="chkDomingo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fechas" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDateTime">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerarFestivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarFestivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarMotivosDiferencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarMotivosDiferenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarMotivosDiferenciasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDiferencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarDiferenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarDiferenciasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaActivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds1">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ds2">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaActivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarDiferenciaActivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarDiferenciaProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaMixto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds1">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ds2">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ds3">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="ds4">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarDiferenciaMixtoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarDiferenciaMixtoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Serial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearEtiqueta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearEtiquetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearEtiquetaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarEtiqueta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Longitud" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEtiqueta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarEtiquetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarEtiquetaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEtiqueta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Longitud" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoEtiqueta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEtiquetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarEtiquetaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarMotivoAnulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarMotivoAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarMotivoAnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMotivoAnulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMotivoAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearMotivoAnulacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMotivoAnulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMotivoAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarMotivoAnulacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMotivoAnulacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoAnulacion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMotivoAnulacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarMotivoAnulacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMotivoDiferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearMotivoDiferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearMotivoDiferenciaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMotivoDiferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMotivoDiferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarMotivoDiferenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMotivoDiferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoDiferencia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarMotivoDiferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarMotivoDiferenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProgramacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EstadoConteo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Encargado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProgramacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearProgramacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerUsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgramarConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lstFechas" type="tns:ArrayOfDateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoraInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoraFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoConteo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Encargado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EnviaCorreo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ConFestivos" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Periodicidad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="lstSucursales" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Confirmacion" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProgramarConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramarConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSectorSubdeposito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoSubdeposito" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSectorSubdepositoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerSectorSubdepositoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerConteos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerConteosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerConteosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UltimoConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UltimoConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UltimoConteoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarActivosPocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDetalle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoActivo" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarActivosPocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarActivosPocketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarActivoCapacidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoActivo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarActivoCapacidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarActivoCapacidadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoActivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearActivosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActivosGrilla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoActivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearActivosGrillaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearActivosGrillaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreActivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreActivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombreActivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarActivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDetalle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtAjenos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtPropios">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarActivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarActivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarProductosPocket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDetalle" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoProducto" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Capacidad" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarProductosPocketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarProductosPocketResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDetalle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtProducto">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtProductoPart">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProductosCombo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProductosComboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearProductosComboResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProductosGrilla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Propiedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearProductosGrillaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearProductosGrillaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapacidadesProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoProducto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapacidadesProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CapacidadesProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoProducto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NombreProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NombreProductoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarMixto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contenido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDetalle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtProducto">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtAjenos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtPropios">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtProductoAjeno">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarMixtoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarMixtoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndicadorCuentaCorriente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoProducto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndicadorCuentaCorrienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndicadorCuentaCorrienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprogramarConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoraInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="HoraFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoConteo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Encargado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReprogramarConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReprogramarConteoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerDatosConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerDatosConteoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSubdepositosConteo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoConteo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerSubdepositosConteoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerSubdepositosConteoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarSectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CargarSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CargarSectoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SectoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSectoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectoresSubdepositos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectoresSubdepositosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSectoresSubdepositosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSector" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarSectoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarSectores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSector" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarSectoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarSectoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSubdepositos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSubdepositosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSubdepositosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSubdepositosConfigurados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSubdepositosConfiguradosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSubdepositosConfiguradosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSubdepositoSector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSubdepositoSectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSubdepositoSectorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSubdepositoSector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Secuencia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSubdepositoSectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarSubdepositoSectorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSubdepositoSector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Subdeposito" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ControlaPapeleria" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSubdepositoSectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarSubdepositoSectorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSucursales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSucursalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectorSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSectorSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSectorSucursalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearSucursalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarSucursalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Sucursal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sector" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarSucursalResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RutasNoRendidas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pEmpid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAgencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pIdConteo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RutasNoRendidasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RutasNoRendidasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PapeleriaNoDigitada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pEmpid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="pAgencia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pIdConteo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PapeleriaNoDigitadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PapeleriaNoDigitadaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarPapeleria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConnection" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Conteo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtRutas">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtPapeleria">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarPapeleriaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AnularConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:AnularConteo" />
+  </wsdl:message>
+  <wsdl:message name="AnularConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:AnularConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AbrirConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:AbrirConteo" />
+  </wsdl:message>
+  <wsdl:message name="AbrirConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:AbrirConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BloquearConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearConteo" />
+  </wsdl:message>
+  <wsdl:message name="BloquearConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BloquearRegistroConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearRegistroConteo" />
+  </wsdl:message>
+  <wsdl:message name="BloquearRegistroConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearRegistroConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CerrarConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:CerrarConteo" />
+  </wsdl:message>
+  <wsdl:message name="CerrarConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:CerrarConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearCierreSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearCierre" />
+  </wsdl:message>
+  <wsdl:message name="CrearCierreSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearCierreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFestivosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarFestivos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarFestivosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarFestivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarFestivosSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarFestivos" />
+  </wsdl:message>
+  <wsdl:message name="GenerarFestivosSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarFestivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarMotivosDiferenciasSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarMotivosDiferencias" />
+  </wsdl:message>
+  <wsdl:message name="CargarMotivosDiferenciasSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarMotivosDiferenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDiferenciasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarDiferencias" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarDiferenciasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarDiferenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaActivosSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaActivos" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaActivosSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaProductos" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaMixtoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaMixto" />
+  </wsdl:message>
+  <wsdl:message name="InsertarDiferenciaMixtoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarDiferenciaMixtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarConteo" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearEtiquetaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearEtiqueta" />
+  </wsdl:message>
+  <wsdl:message name="CrearEtiquetaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearEtiquetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarEtiquetaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarEtiqueta" />
+  </wsdl:message>
+  <wsdl:message name="InsertarEtiquetaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarEtiquetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEtiquetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEtiqueta" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEtiquetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEtiquetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarMotivoAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarMotivoAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="CargarMotivoAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarMotivoAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearMotivoAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearMotivoAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="CrearMotivoAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearMotivoAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMotivoAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarMotivoAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMotivoAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarMotivoAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMotivoAnulacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarMotivoAnulacion" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMotivoAnulacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarMotivoAnulacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearMotivoDiferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearMotivoDiferencia" />
+  </wsdl:message>
+  <wsdl:message name="CrearMotivoDiferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearMotivoDiferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMotivoDiferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarMotivoDiferencia" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMotivoDiferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarMotivoDiferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMotivoDiferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarMotivoDiferencia" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarMotivoDiferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarMotivoDiferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearProgramacionSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearProgramacion" />
+  </wsdl:message>
+  <wsdl:message name="CrearProgramacionSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearProgramacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerUsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProgramarConteo" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProgramarConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSectorSubdepositoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSectorSubdeposito" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSectorSubdepositoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSectorSubdepositoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerConteosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerConteos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerConteosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerConteosResponse" />
+  </wsdl:message>
+  <wsdl:message name="UltimoConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:UltimoConteo" />
+  </wsdl:message>
+  <wsdl:message name="UltimoConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:UltimoConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarActivosPocketSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarActivosPocket" />
+  </wsdl:message>
+  <wsdl:message name="GuardarActivosPocketSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarActivosPocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarActivoCapacidadSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarActivoCapacidad" />
+  </wsdl:message>
+  <wsdl:message name="CargarActivoCapacidadSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarActivoCapacidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearActivosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearActivos" />
+  </wsdl:message>
+  <wsdl:message name="CrearActivosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearActivosGrillaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearActivosGrilla" />
+  </wsdl:message>
+  <wsdl:message name="CrearActivosGrillaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearActivosGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="NombreActivoSoapIn">
+    <wsdl:part name="parameters" element="tns:NombreActivo" />
+  </wsdl:message>
+  <wsdl:message name="NombreActivoSoapOut">
+    <wsdl:part name="parameters" element="tns:NombreActivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarActivosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarActivos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarActivosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarProductosPocketSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarProductosPocket" />
+  </wsdl:message>
+  <wsdl:message name="GuardarProductosPocketSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarProductosPocketResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarProductos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearProductosComboSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearProductosCombo" />
+  </wsdl:message>
+  <wsdl:message name="CrearProductosComboSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearProductosComboResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearProductosGrillaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearProductosGrilla" />
+  </wsdl:message>
+  <wsdl:message name="CrearProductosGrillaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearProductosGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapacidadesProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:CapacidadesProducto" />
+  </wsdl:message>
+  <wsdl:message name="CapacidadesProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:CapacidadesProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="NombreProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:NombreProducto" />
+  </wsdl:message>
+  <wsdl:message name="NombreProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:NombreProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarMixtoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarMixto" />
+  </wsdl:message>
+  <wsdl:message name="GuardarMixtoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarMixtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndicadorCuentaCorrienteSoapIn">
+    <wsdl:part name="parameters" element="tns:IndicadorCuentaCorriente" />
+  </wsdl:message>
+  <wsdl:message name="IndicadorCuentaCorrienteSoapOut">
+    <wsdl:part name="parameters" element="tns:IndicadorCuentaCorrienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReprogramarConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ReprogramarConteo" />
+  </wsdl:message>
+  <wsdl:message name="ReprogramarConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ReprogramarConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosConteo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerDatosConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerDatosConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSubdepositosConteoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerSubdepositosConteo" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerSubdepositosConteoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerSubdepositosConteoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CargarSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:CargarSectores" />
+  </wsdl:message>
+  <wsdl:message name="CargarSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:CargarSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="SectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:Sectores" />
+  </wsdl:message>
+  <wsdl:message name="SectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:SectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSectores" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectoresSubdepositosSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSectoresSubdepositos" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectoresSubdepositosSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSectoresSubdepositosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarSectores" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSectoresSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarSectores" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSectoresSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarSectoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSubdepositosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSubdepositos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSubdepositosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSubdepositosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSubdepositosConfiguradosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSubdepositosConfigurados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSubdepositosConfiguradosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSubdepositosConfiguradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSubdepositoSectorSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSubdepositoSector" />
+  </wsdl:message>
+  <wsdl:message name="CrearSubdepositoSectorSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSubdepositoSectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSubdepositoSectorSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarSubdepositoSector" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSubdepositoSectorSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarSubdepositoSectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSubdepositoSectorSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarSubdepositoSector" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSubdepositoSectorSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarSubdepositoSectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSucursales" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectorSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSectorSucursal" />
+  </wsdl:message>
+  <wsdl:message name="CrearSectorSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSectorSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearSucursal" />
+  </wsdl:message>
+  <wsdl:message name="CrearSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarSucursal" />
+  </wsdl:message>
+  <wsdl:message name="EliminarSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarSucursal" />
+  </wsdl:message>
+  <wsdl:message name="InsertarSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="RutasNoRendidasSoapIn">
+    <wsdl:part name="parameters" element="tns:RutasNoRendidas" />
+  </wsdl:message>
+  <wsdl:message name="RutasNoRendidasSoapOut">
+    <wsdl:part name="parameters" element="tns:RutasNoRendidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="PapeleriaNoDigitadaSoapIn">
+    <wsdl:part name="parameters" element="tns:PapeleriaNoDigitada" />
+  </wsdl:message>
+  <wsdl:message name="PapeleriaNoDigitadaSoapOut">
+    <wsdl:part name="parameters" element="tns:PapeleriaNoDigitadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CerrarPapeleriaSoapIn">
+    <wsdl:part name="parameters" element="tns:CerrarPapeleria" />
+  </wsdl:message>
+  <wsdl:message name="CerrarPapeleriaSoapOut">
+    <wsdl:part name="parameters" element="tns:CerrarPapeleriaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AnularConteo">
+      <wsdl:input message="tns:AnularConteoSoapIn" />
+      <wsdl:output message="tns:AnularConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AbrirConteo">
+      <wsdl:input message="tns:AbrirConteoSoapIn" />
+      <wsdl:output message="tns:AbrirConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearConteo">
+      <wsdl:input message="tns:BloquearConteoSoapIn" />
+      <wsdl:output message="tns:BloquearConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearRegistroConteo">
+      <wsdl:input message="tns:BloquearRegistroConteoSoapIn" />
+      <wsdl:output message="tns:BloquearRegistroConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarConteo">
+      <wsdl:input message="tns:CerrarConteoSoapIn" />
+      <wsdl:output message="tns:CerrarConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCierre">
+      <wsdl:input message="tns:CrearCierreSoapIn" />
+      <wsdl:output message="tns:CrearCierreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFestivos">
+      <wsdl:input message="tns:ConsultarFestivosSoapIn" />
+      <wsdl:output message="tns:ConsultarFestivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarFestivos">
+      <wsdl:input message="tns:GenerarFestivosSoapIn" />
+      <wsdl:output message="tns:GenerarFestivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivosDiferencias">
+      <wsdl:input message="tns:CargarMotivosDiferenciasSoapIn" />
+      <wsdl:output message="tns:CargarMotivosDiferenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDiferencias">
+      <wsdl:input message="tns:ConsultarDiferenciasSoapIn" />
+      <wsdl:output message="tns:ConsultarDiferenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaActivos">
+      <wsdl:input message="tns:InsertarDiferenciaActivosSoapIn" />
+      <wsdl:output message="tns:InsertarDiferenciaActivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaProductos">
+      <wsdl:input message="tns:InsertarDiferenciaProductosSoapIn" />
+      <wsdl:output message="tns:InsertarDiferenciaProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaMixto">
+      <wsdl:input message="tns:InsertarDiferenciaMixtoSoapIn" />
+      <wsdl:output message="tns:InsertarDiferenciaMixtoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConteo">
+      <wsdl:input message="tns:ConsultarConteoSoapIn" />
+      <wsdl:output message="tns:ConsultarConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearEtiqueta">
+      <wsdl:input message="tns:CrearEtiquetaSoapIn" />
+      <wsdl:output message="tns:CrearEtiquetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEtiqueta">
+      <wsdl:input message="tns:InsertarEtiquetaSoapIn" />
+      <wsdl:output message="tns:InsertarEtiquetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEtiqueta">
+      <wsdl:input message="tns:ActualizarEtiquetaSoapIn" />
+      <wsdl:output message="tns:ActualizarEtiquetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivoAnulacion">
+      <wsdl:input message="tns:CargarMotivoAnulacionSoapIn" />
+      <wsdl:output message="tns:CargarMotivoAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoAnulacion">
+      <wsdl:input message="tns:CrearMotivoAnulacionSoapIn" />
+      <wsdl:output message="tns:CrearMotivoAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoAnulacion">
+      <wsdl:input message="tns:InsertarMotivoAnulacionSoapIn" />
+      <wsdl:output message="tns:InsertarMotivoAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoAnulacion">
+      <wsdl:input message="tns:ActualizarMotivoAnulacionSoapIn" />
+      <wsdl:output message="tns:ActualizarMotivoAnulacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoDiferencia">
+      <wsdl:input message="tns:CrearMotivoDiferenciaSoapIn" />
+      <wsdl:output message="tns:CrearMotivoDiferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoDiferencia">
+      <wsdl:input message="tns:InsertarMotivoDiferenciaSoapIn" />
+      <wsdl:output message="tns:InsertarMotivoDiferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoDiferencia">
+      <wsdl:input message="tns:ActualizarMotivoDiferenciaSoapIn" />
+      <wsdl:output message="tns:ActualizarMotivoDiferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearProgramacion">
+      <wsdl:input message="tns:CrearProgramacionSoapIn" />
+      <wsdl:output message="tns:CrearProgramacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarios">
+      <wsdl:input message="tns:ObtenerUsuariosSoapIn" />
+      <wsdl:output message="tns:ObtenerUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarConteo">
+      <wsdl:input message="tns:ProgramarConteoSoapIn" />
+      <wsdl:output message="tns:ProgramarConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSectorSubdeposito">
+      <wsdl:input message="tns:ObtenerSectorSubdepositoSoapIn" />
+      <wsdl:output message="tns:ObtenerSectorSubdepositoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConteos">
+      <wsdl:input message="tns:ObtenerConteosSoapIn" />
+      <wsdl:output message="tns:ObtenerConteosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UltimoConteo">
+      <wsdl:input message="tns:UltimoConteoSoapIn" />
+      <wsdl:output message="tns:UltimoConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivosPocket">
+      <wsdl:input message="tns:GuardarActivosPocketSoapIn" />
+      <wsdl:output message="tns:GuardarActivosPocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarActivoCapacidad">
+      <wsdl:input message="tns:CargarActivoCapacidadSoapIn" />
+      <wsdl:output message="tns:CargarActivoCapacidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivos">
+      <wsdl:input message="tns:CrearActivosSoapIn" />
+      <wsdl:output message="tns:CrearActivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivosGrilla">
+      <wsdl:input message="tns:CrearActivosGrillaSoapIn" />
+      <wsdl:output message="tns:CrearActivosGrillaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NombreActivo">
+      <wsdl:input message="tns:NombreActivoSoapIn" />
+      <wsdl:output message="tns:NombreActivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivos">
+      <wsdl:input message="tns:GuardarActivosSoapIn" />
+      <wsdl:output message="tns:GuardarActivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductosPocket">
+      <wsdl:input message="tns:GuardarProductosPocketSoapIn" />
+      <wsdl:output message="tns:GuardarProductosPocketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductos">
+      <wsdl:input message="tns:GuardarProductosSoapIn" />
+      <wsdl:output message="tns:GuardarProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosCombo">
+      <wsdl:input message="tns:CrearProductosComboSoapIn" />
+      <wsdl:output message="tns:CrearProductosComboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosGrilla">
+      <wsdl:input message="tns:CrearProductosGrillaSoapIn" />
+      <wsdl:output message="tns:CrearProductosGrillaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapacidadesProducto">
+      <wsdl:input message="tns:CapacidadesProductoSoapIn" />
+      <wsdl:output message="tns:CapacidadesProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NombreProducto">
+      <wsdl:input message="tns:NombreProductoSoapIn" />
+      <wsdl:output message="tns:NombreProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMixto">
+      <wsdl:input message="tns:GuardarMixtoSoapIn" />
+      <wsdl:output message="tns:GuardarMixtoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndicadorCuentaCorriente">
+      <wsdl:input message="tns:IndicadorCuentaCorrienteSoapIn" />
+      <wsdl:output message="tns:IndicadorCuentaCorrienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprogramarConteo">
+      <wsdl:input message="tns:ReprogramarConteoSoapIn" />
+      <wsdl:output message="tns:ReprogramarConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosConteo">
+      <wsdl:input message="tns:ObtenerDatosConteoSoapIn" />
+      <wsdl:output message="tns:ObtenerDatosConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubdepositosConteo">
+      <wsdl:input message="tns:ObtenerSubdepositosConteoSoapIn" />
+      <wsdl:output message="tns:ObtenerSubdepositosConteoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CargarSectores">
+      <wsdl:input message="tns:CargarSectoresSoapIn" />
+      <wsdl:output message="tns:CargarSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sectores">
+      <wsdl:input message="tns:SectoresSoapIn" />
+      <wsdl:output message="tns:SectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectores">
+      <wsdl:input message="tns:CrearSectoresSoapIn" />
+      <wsdl:output message="tns:CrearSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectoresSubdepositos">
+      <wsdl:input message="tns:CrearSectoresSubdepositosSoapIn" />
+      <wsdl:output message="tns:CrearSectoresSubdepositosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSectores">
+      <wsdl:input message="tns:InsertarSectoresSoapIn" />
+      <wsdl:output message="tns:InsertarSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSectores">
+      <wsdl:input message="tns:ActualizarSectoresSoapIn" />
+      <wsdl:output message="tns:ActualizarSectoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositos">
+      <wsdl:input message="tns:ConsultarSubdepositosSoapIn" />
+      <wsdl:output message="tns:ConsultarSubdepositosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositosConfigurados">
+      <wsdl:input message="tns:ConsultarSubdepositosConfiguradosSoapIn" />
+      <wsdl:output message="tns:ConsultarSubdepositosConfiguradosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSubdepositoSector">
+      <wsdl:input message="tns:CrearSubdepositoSectorSoapIn" />
+      <wsdl:output message="tns:CrearSubdepositoSectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSubdepositoSector">
+      <wsdl:input message="tns:EliminarSubdepositoSectorSoapIn" />
+      <wsdl:output message="tns:EliminarSubdepositoSectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSubdepositoSector">
+      <wsdl:input message="tns:InsertarSubdepositoSectorSoapIn" />
+      <wsdl:output message="tns:InsertarSubdepositoSectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSucursales">
+      <wsdl:input message="tns:ConsultarSucursalesSoapIn" />
+      <wsdl:output message="tns:ConsultarSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectorSucursal">
+      <wsdl:input message="tns:CrearSectorSucursalSoapIn" />
+      <wsdl:output message="tns:CrearSectorSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearSucursal">
+      <wsdl:input message="tns:CrearSucursalSoapIn" />
+      <wsdl:output message="tns:CrearSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSucursal">
+      <wsdl:input message="tns:EliminarSucursalSoapIn" />
+      <wsdl:output message="tns:EliminarSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSucursal">
+      <wsdl:input message="tns:InsertarSucursalSoapIn" />
+      <wsdl:output message="tns:InsertarSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RutasNoRendidas">
+      <wsdl:input message="tns:RutasNoRendidasSoapIn" />
+      <wsdl:output message="tns:RutasNoRendidasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PapeleriaNoDigitada">
+      <wsdl:input message="tns:PapeleriaNoDigitadaSoapIn" />
+      <wsdl:output message="tns:PapeleriaNoDigitadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarPapeleria">
+      <wsdl:input message="tns:CerrarPapeleriaSoapIn" />
+      <wsdl:output message="tns:CerrarPapeleriaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularConteo">
+      <soap:operation soapAction="http://tempuri.org/AnularConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbrirConteo">
+      <soap:operation soapAction="http://tempuri.org/AbrirConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearConteo">
+      <soap:operation soapAction="http://tempuri.org/BloquearConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearRegistroConteo">
+      <soap:operation soapAction="http://tempuri.org/BloquearRegistroConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarConteo">
+      <soap:operation soapAction="http://tempuri.org/CerrarConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCierre">
+      <soap:operation soapAction="http://tempuri.org/CrearCierre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFestivos">
+      <soap:operation soapAction="http://tempuri.org/ConsultarFestivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarFestivos">
+      <soap:operation soapAction="http://tempuri.org/GenerarFestivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivosDiferencias">
+      <soap:operation soapAction="http://tempuri.org/CargarMotivosDiferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDiferencias">
+      <soap:operation soapAction="http://tempuri.org/ConsultarDiferencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaActivos">
+      <soap:operation soapAction="http://tempuri.org/InsertarDiferenciaActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaProductos">
+      <soap:operation soapAction="http://tempuri.org/InsertarDiferenciaProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaMixto">
+      <soap:operation soapAction="http://tempuri.org/InsertarDiferenciaMixto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConteo">
+      <soap:operation soapAction="http://tempuri.org/ConsultarConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearEtiqueta">
+      <soap:operation soapAction="http://tempuri.org/CrearEtiqueta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEtiqueta">
+      <soap:operation soapAction="http://tempuri.org/InsertarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEtiqueta">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivoAnulacion">
+      <soap:operation soapAction="http://tempuri.org/CargarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoAnulacion">
+      <soap:operation soapAction="http://tempuri.org/CrearMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoAnulacion">
+      <soap:operation soapAction="http://tempuri.org/InsertarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoAnulacion">
+      <soap:operation soapAction="http://tempuri.org/ActualizarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoDiferencia">
+      <soap:operation soapAction="http://tempuri.org/CrearMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoDiferencia">
+      <soap:operation soapAction="http://tempuri.org/InsertarMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoDiferencia">
+      <soap:operation soapAction="http://tempuri.org/ActualizarMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProgramacion">
+      <soap:operation soapAction="http://tempuri.org/CrearProgramacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarios">
+      <soap:operation soapAction="http://tempuri.org/ObtenerUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarConteo">
+      <soap:operation soapAction="http://tempuri.org/ProgramarConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSectorSubdeposito">
+      <soap:operation soapAction="http://tempuri.org/ObtenerSectorSubdeposito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConteos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerConteos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UltimoConteo">
+      <soap:operation soapAction="http://tempuri.org/UltimoConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivosPocket">
+      <soap:operation soapAction="http://tempuri.org/GuardarActivosPocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarActivoCapacidad">
+      <soap:operation soapAction="http://tempuri.org/CargarActivoCapacidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivos">
+      <soap:operation soapAction="http://tempuri.org/CrearActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivosGrilla">
+      <soap:operation soapAction="http://tempuri.org/CrearActivosGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreActivo">
+      <soap:operation soapAction="http://tempuri.org/NombreActivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivos">
+      <soap:operation soapAction="http://tempuri.org/GuardarActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductosPocket">
+      <soap:operation soapAction="http://tempuri.org/GuardarProductosPocket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductos">
+      <soap:operation soapAction="http://tempuri.org/GuardarProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosCombo">
+      <soap:operation soapAction="http://tempuri.org/CrearProductosCombo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosGrilla">
+      <soap:operation soapAction="http://tempuri.org/CrearProductosGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapacidadesProducto">
+      <soap:operation soapAction="http://tempuri.org/CapacidadesProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreProducto">
+      <soap:operation soapAction="http://tempuri.org/NombreProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMixto">
+      <soap:operation soapAction="http://tempuri.org/GuardarMixto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicadorCuentaCorriente">
+      <soap:operation soapAction="http://tempuri.org/IndicadorCuentaCorriente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprogramarConteo">
+      <soap:operation soapAction="http://tempuri.org/ReprogramarConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosConteo">
+      <soap:operation soapAction="http://tempuri.org/ObtenerDatosConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubdepositosConteo">
+      <soap:operation soapAction="http://tempuri.org/ObtenerSubdepositosConteo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarSectores">
+      <soap:operation soapAction="http://tempuri.org/CargarSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sectores">
+      <soap:operation soapAction="http://tempuri.org/Sectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectores">
+      <soap:operation soapAction="http://tempuri.org/CrearSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectoresSubdepositos">
+      <soap:operation soapAction="http://tempuri.org/CrearSectoresSubdepositos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSectores">
+      <soap:operation soapAction="http://tempuri.org/InsertarSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSectores">
+      <soap:operation soapAction="http://tempuri.org/ActualizarSectores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositos">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSubdepositos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositosConfigurados">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSubdepositosConfigurados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSubdepositoSector">
+      <soap:operation soapAction="http://tempuri.org/CrearSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSubdepositoSector">
+      <soap:operation soapAction="http://tempuri.org/EliminarSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSubdepositoSector">
+      <soap:operation soapAction="http://tempuri.org/InsertarSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSucursales">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectorSucursal">
+      <soap:operation soapAction="http://tempuri.org/CrearSectorSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSucursal">
+      <soap:operation soapAction="http://tempuri.org/CrearSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSucursal">
+      <soap:operation soapAction="http://tempuri.org/EliminarSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSucursal">
+      <soap:operation soapAction="http://tempuri.org/InsertarSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RutasNoRendidas">
+      <soap:operation soapAction="http://tempuri.org/RutasNoRendidas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PapeleriaNoDigitada">
+      <soap:operation soapAction="http://tempuri.org/PapeleriaNoDigitada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarPapeleria">
+      <soap:operation soapAction="http://tempuri.org/CerrarPapeleria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AnularConteo">
+      <soap12:operation soapAction="http://tempuri.org/AnularConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbrirConteo">
+      <soap12:operation soapAction="http://tempuri.org/AbrirConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearConteo">
+      <soap12:operation soapAction="http://tempuri.org/BloquearConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearRegistroConteo">
+      <soap12:operation soapAction="http://tempuri.org/BloquearRegistroConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarConteo">
+      <soap12:operation soapAction="http://tempuri.org/CerrarConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCierre">
+      <soap12:operation soapAction="http://tempuri.org/CrearCierre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarFestivos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarFestivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarFestivos">
+      <soap12:operation soapAction="http://tempuri.org/GenerarFestivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivosDiferencias">
+      <soap12:operation soapAction="http://tempuri.org/CargarMotivosDiferencias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarDiferencias">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarDiferencias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaActivos">
+      <soap12:operation soapAction="http://tempuri.org/InsertarDiferenciaActivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaProductos">
+      <soap12:operation soapAction="http://tempuri.org/InsertarDiferenciaProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarDiferenciaMixto">
+      <soap12:operation soapAction="http://tempuri.org/InsertarDiferenciaMixto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarConteo">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearEtiqueta">
+      <soap12:operation soapAction="http://tempuri.org/CrearEtiqueta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarEtiqueta">
+      <soap12:operation soapAction="http://tempuri.org/InsertarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEtiqueta">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEtiqueta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarMotivoAnulacion">
+      <soap12:operation soapAction="http://tempuri.org/CargarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoAnulacion">
+      <soap12:operation soapAction="http://tempuri.org/CrearMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoAnulacion">
+      <soap12:operation soapAction="http://tempuri.org/InsertarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoAnulacion">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarMotivoAnulacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMotivoDiferencia">
+      <soap12:operation soapAction="http://tempuri.org/CrearMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMotivoDiferencia">
+      <soap12:operation soapAction="http://tempuri.org/InsertarMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarMotivoDiferencia">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarMotivoDiferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProgramacion">
+      <soap12:operation soapAction="http://tempuri.org/CrearProgramacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUsuarios">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerUsuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarConteo">
+      <soap12:operation soapAction="http://tempuri.org/ProgramarConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSectorSubdeposito">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerSectorSubdeposito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerConteos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerConteos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UltimoConteo">
+      <soap12:operation soapAction="http://tempuri.org/UltimoConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivosPocket">
+      <soap12:operation soapAction="http://tempuri.org/GuardarActivosPocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarActivoCapacidad">
+      <soap12:operation soapAction="http://tempuri.org/CargarActivoCapacidad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivos">
+      <soap12:operation soapAction="http://tempuri.org/CrearActivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearActivosGrilla">
+      <soap12:operation soapAction="http://tempuri.org/CrearActivosGrilla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreActivo">
+      <soap12:operation soapAction="http://tempuri.org/NombreActivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarActivos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarActivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductosPocket">
+      <soap12:operation soapAction="http://tempuri.org/GuardarProductosPocket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarProductos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosCombo">
+      <soap12:operation soapAction="http://tempuri.org/CrearProductosCombo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearProductosGrilla">
+      <soap12:operation soapAction="http://tempuri.org/CrearProductosGrilla" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapacidadesProducto">
+      <soap12:operation soapAction="http://tempuri.org/CapacidadesProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NombreProducto">
+      <soap12:operation soapAction="http://tempuri.org/NombreProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarMixto">
+      <soap12:operation soapAction="http://tempuri.org/GuardarMixto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndicadorCuentaCorriente">
+      <soap12:operation soapAction="http://tempuri.org/IndicadorCuentaCorriente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprogramarConteo">
+      <soap12:operation soapAction="http://tempuri.org/ReprogramarConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerDatosConteo">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerDatosConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerSubdepositosConteo">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerSubdepositosConteo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CargarSectores">
+      <soap12:operation soapAction="http://tempuri.org/CargarSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sectores">
+      <soap12:operation soapAction="http://tempuri.org/Sectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectores">
+      <soap12:operation soapAction="http://tempuri.org/CrearSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectoresSubdepositos">
+      <soap12:operation soapAction="http://tempuri.org/CrearSectoresSubdepositos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSectores">
+      <soap12:operation soapAction="http://tempuri.org/InsertarSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarSectores">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarSectores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSubdepositos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSubdepositosConfigurados">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSubdepositosConfigurados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSubdepositoSector">
+      <soap12:operation soapAction="http://tempuri.org/CrearSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSubdepositoSector">
+      <soap12:operation soapAction="http://tempuri.org/EliminarSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSubdepositoSector">
+      <soap12:operation soapAction="http://tempuri.org/InsertarSubdepositoSector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSucursales">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSectorSucursal">
+      <soap12:operation soapAction="http://tempuri.org/CrearSectorSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearSucursal">
+      <soap12:operation soapAction="http://tempuri.org/CrearSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarSucursal">
+      <soap12:operation soapAction="http://tempuri.org/EliminarSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarSucursal">
+      <soap12:operation soapAction="http://tempuri.org/InsertarSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RutasNoRendidas">
+      <soap12:operation soapAction="http://tempuri.org/RutasNoRendidas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PapeleriaNoDigitada">
+      <soap12:operation soapAction="http://tempuri.org/PapeleriaNoDigitada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarPapeleria">
+      <soap12:operation soapAction="http://tempuri.org/CerrarPapeleria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://10.104.8.5/servicios/WsControlPaquete/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://10.104.8.5/servicios/WsControlPaquete/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
