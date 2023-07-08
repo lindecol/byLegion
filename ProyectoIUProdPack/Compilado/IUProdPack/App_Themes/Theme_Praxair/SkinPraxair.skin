@@ -1,0 +1,267 @@
+<%-- LABEL --%>
+        <asp:Label runat="server" Font-Bold="true" Font-Size="10px" ForeColor="#636500" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif"></asp:Label>
+        <asp:Label runat="server" Font-Size="10px" ForeColor="#636500" Font-Bold="True" SkinID="ASP_Label-Obligatorio" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" ></asp:Label>
+        <asp:Label runat="server" Font-Size="10px" ForeColor="#000000" SkinID="ASP_Label-Texto" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif"></asp:Label>    
+
+<%-- DROPDOWNLIST --%>
+        <asp:DropDownList runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="11px"  ForeColor="#636500"></asp:DropDownList>
+
+<%-- B E G I N    LINKBUTTON HYPERLINK--%>    
+        <asp:LinkButton runat="server" Font-Bold="True" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="10pt" ForeColor="#636500"></asp:LinkButton>   
+        <asp:HyperLink runat="server" Font-Bold="True" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="10pt" ForeColor="#636500"></asp:HyperLink>   
+
+<%-- B E G I N   TEXTBOX --%>
+        <asp:TextBox runat="server" BorderColor="#CCCCCC" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif"
+            Font-Size="11px" Font-Strikeout="False" ForeColor="#636500" Width="85%">
+        </asp:TextBox>	
+
+<%-- B E G I N   CHECKBOX CHECKBOXLIST--%>   
+        <asp:CheckBox runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="11px" ForeColor="#636500" />
+        <asp:CheckBoxList runat="server" CellPadding="1" 
+         CellSpacing="6" Font-Names="Verdana" Font-Size="12px" ForeColor="#636500" RepeatColumns="2">
+        </asp:CheckBoxList>     
+
+<%-- B E G I N   RADIOBUTTON RADIOBUTTONLIST--%>
+        <asp:RadioButton runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="10px" ForeColor="#636500"/>
+        <asp:RadioButtonList runat="server" CellPadding="1" 
+            CellSpacing="6" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="12px" ForeColor="#636500" RepeatColumns="2" RepeatDirection="Horizontal">
+        </asp:RadioButtonList>
+        
+<%-- B E G I N   VALIDATOR --%>           
+         <asp:CompareValidator runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="7pt" ForeColor="Red"></asp:CompareValidator>
+         <asp:RegularExpressionValidator runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="7pt" ForeColor="Red"></asp:RegularExpressionValidator>
+         <asp:RequiredFieldValidator runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="7pt" ForeColor="Red"></asp:RequiredFieldValidator>
+         <asp:CustomValidator runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="7pt" ForeColor="Red"></asp:CustomValidator>
+         <asp:RangeValidator runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="7pt" ForeColor="Red"></asp:RangeValidator>    
+         <asp:ValidationSummary runat="server" Font-Names="Verdana,  Times New Roman, Helvetica, sans-serif" Font-Size="8pt" ForeColor="Red" HeaderText="Errores encontrados:"/>
+
+<%-- B E G I N   PANEL --%>        
+         <asp:Panel runat="server"  BorderStyle="Solid" BorderColor="#636500" BorderWidth="1px">
+         </asp:Panel>    
+         
+<%-- B E G I N   CALENDAR ASP.NET --%>
+         <asp:Calendar runat="server" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333">
+            <SelectedDayStyle BackColor="#66CCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="10pt" ForeColor="#333333" />
+            <TodayDayStyle BackColor="#9CC8FE" Font-Bold="True" Font-Names="Verdana" Font-Size="10pt" ForeColor="#333333" />
+            <DayHeaderStyle BackColor="#636500" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" ForeColor="#FFFFFF" />
+            <TitleStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" Font-Size="8pt" HorizontalAlign="Center" VerticalAlign="Middle" />
+         </asp:Calendar>        
+         
+<%-- B E G I N    IMAGEBUTTON --%>
+        <asp:ImageButton runat="server" ToolTip="Aceptar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Aceptar.png" SkinID="ASP_ImgButton-Aceptar"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Adicionar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Adicionar.png" SkinID="ASP_ImgButton-Adicionar"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Buscar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Buscar.png" SkinID="ASP_ImgButton-Buscar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Cancelar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Cancelar.png" SkinID="ASP_ImgButton-Cancelar"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Editar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Editar.png" SkinID="ASP_ImgButton-Editar"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Eliminar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Eliminar.png" SkinID="ASP_ImgButton-Eliminar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Guardar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Guardar.png" SkinID="ASP_ImgButton-Guardar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Crear Hoja de Ruta" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Crear_Hoja_Ruta.png" SkinID="ASP_ImgButton-CrearHojaRuta"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Asignar Grupos a Operador" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Asignar_Ruta.png" SkinID="ASP_ImgButton-AsignarRuta"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Limpiar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Limpiar.png" SkinID="ASP_ImgButton-Limpiar"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Iniciar Ingreso Zona Franca" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_IniciarZonal.png" SkinID="ASP_ImgButton-IniZona"/>
+            
+         <asp:ImageButton runat="server" ToolTip="Generar Factura Proforma" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Generar.png" SkinID="ASP_ImgButton-GenFact"/>     
+                
+         <asp:ImageButton runat="server" ToolTip="Anular Factura Proforma" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Anular_Fac.png" SkinID="ASP_ImgButton-AnulFact"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Exportar a excel" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_exportar.png" SkinID="ASP_ImgButton-ExportaExcel"/>     
+            
+         <asp:ImageButton runat="server" ToolTip="Anular Cilindro" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Anular_Cilindro.png" SkinID="ASP_ImgButton-AnularCil"/>     
+            
+         <asp:ImageButton runat="server" ToolTip="Anular Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Anular_Lote.png" SkinID="ASP_ImgButton-AnularLote"/>     
+           
+         <asp:ImageButton runat="server" ToolTip="Consultar Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Cons_Lote.png" SkinID="ASP_ImgButton-ConsLote"/>     
+             
+         <asp:ImageButton runat="server" ToolTip="Guardar Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_GuardarLote.png" SkinID="ASP_ImgButton-GuardarLote"/>     
+             
+         <asp:ImageButton runat="server" ToolTip="Imprimir" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Imprimir.png" SkinID="ASP_ImgButton-Imprimir"/>     
+             
+         <asp:ImageButton runat="server" ToolTip="Imprimir Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Imprimir_lote.png" SkinID="ASP_ImgButton-ImprimirLote"/>     
+             
+         <asp:ImageButton runat="server" ToolTip="Lotes" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Lotes.png" SkinID="ASP_ImgButton-Lotes"/>     
+             
+         <asp:ImageButton runat="server" ToolTip="Nuevo Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_NuevoLote.png" SkinID="ASP_ImgButton-NuevoLote"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Observaciones" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Observacion.png" SkinID="ASP_ImgButton-Observa"/>     
+                     
+         <asp:ImageButton runat="server" ToolTip="Partes" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Partes.png" SkinID="ASP_ImgButton-Partes"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Particulares" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Particulares.png" SkinID="ASP_ImgButton-Pariculares"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Perdida Sellos" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_PerdidaSellos.png" SkinID="ASP_ImgButton-PerdidaSellos"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Rechazo Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_RechazoLote.png" SkinID="ASP_ImgButton-RechazoLote"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Ver Parte Diario" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_VerParte.png" SkinID="ASP_ImgButton-VerParte"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Análisis GM" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_AnalisisGM.png" SkinID="ASP_ImgButton-AnalisisGM"/>     
+         
+         <asp:ImageButton runat="server" ToolTip="Lastro Insumos" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Lastro.png" SkinID="ASP_ImgButton-lastro"/>
+            
+         <asp:ImageButton runat="server" ToolTip="Calcular Totales" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_cal_total.png" SkinID="ASP_ImgButton-calcular"/>   
+            
+         <asp:ImageButton runat="server" ToolTip="Cerrar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Cerrar.png" SkinID="ASP_ImgButton-cerrar"/> 
+            
+         <asp:ImageButton runat="server" ToolTip="Marcar Todo" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Marcar.png" SkinID="ASP_ImgButton-Marcar"/>  
+            
+         <asp:ImageButton runat="server" ToolTip="Desmarcar Todo" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_DesMarcar.png" SkinID="ASP_ImgButton-DesMarcar"/>          
+            
+         <asp:ImageButton runat="server" ToolTip="Composición" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Composicion.png" SkinID="ASP_ImgButton-Compo"/>    
+            
+         <asp:ImageButton runat="server" ToolTip="Transferir Lote" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Transferir.png" SkinID="ASP_ImgButton-Transfer"/>    
+                     
+<%--  B E G I N    ICONOS --%>  
+            
+        <asp:ImageButton runat="server" ToolTip="Aceptar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Aceptar.png" SkinID="ASP_ImgIcon-Aceptar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Adicionar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Adicionar.png" SkinID="ASP_ImgIcon-Adicionar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Buscar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Buscar.png" SkinID="ASP_ImgIcon-Buscar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Cancelar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Cancelar.png" SkinID="ASP_ImgIcon-Cancelar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Editar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Editar.png" SkinID="ASP_ImgIcon-Editar"/>
+               
+        <asp:ImageButton runat="server" ToolTip="Eliminar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Eliminar.png" SkinID="ASP_ImgIcon-Eliminar"/>
+              
+        <asp:ImageButton runat="server" ToolTip="Guardar" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Guardar.png" SkinID="ASP_ImgIcon-Guardar"/>
+            
+        <asp:ImageButton runat="server" ToolTip="Nuevo Grupo" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Adicionar_Grupo.png" SkinID="ASP_ImgIcon-Adicionar-Grupo"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Crear Pedido" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_CrearPedido.png" SkinID="ASP_ImgIcon-Crear-Pedido"/>
+        
+        <asp:ImageButton runat="server" ToolTip="Desasociar Pedido" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Boton_Desasociar.png" SkinID="ASP_ImgIcon-Desasociar-Pedido"/>
+                            
+         <asp:ImageButton runat="server" ToolTip="Composición" Width="26px" Height="24px" 
+            ImageUrl="image/botones/boton_Icono/Icono_Composicion.png" SkinID="ASP_ImgIcon-composicion"/>
+                                  
+                            
+                            
+                            
+<%--  B E G I N    LOGOS --%> 
+        <asp:ImageButton runat="server" ToolTip=""  ImageUrl="image/Logos/logo_praxair.gif" SkinID="ASP_ImgLogo-Principal"/> 
+<%-- E N D    IMAGEBUTTON --%>
+    
+<%-- B E G I N   BUTTON --%>       
+ 
+        <asp:Button runat="server" ToolTip="Aceptar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Aceptar.png" SkinID="ASP_Buttonn-Aceptar"/>
+        
+        <asp:Button runat="server" ToolTip="Adicionar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Adicionar.png" SkinID="ASP_Button-Adicionar"/>
+        
+        <asp:Button runat="server" ToolTip="Buscar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Buscar.png" SkinID="ASP_Button-Buscar"/>
+            
+        <asp:Button runat="server" ToolTip="Cancelar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Cancelar.png" SkinID="ASP_Button-Cancelar"/>
+        
+        <asp:Button runat="server" ToolTip="Editar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Editar.png" SkinID="ASP_Button-Editar"/>
+        
+        <asp:Button runat="server" ToolTip="Eliminar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Eliminar.png" SkinID="ASP_Button-Eliminar"/>
+            
+        <asp:Button  runat="server" ToolTip="Guardar" Width="111px" Height="34px" 
+            ImageUrl="image/botones/boton_Accion/Boton_Guardar.png" SkinID="ASP_Button-Guardar"/>   
+    
+<%-- E N D    IMAGEBUTTON --%>    
+ 
+<%-- B E G I N   GRIDVIEW ASP.NET --%>
+    
+      <asp:GridView runat="server" CaptionAlign="Bottom" CellPadding="1" Font-Names="Verdana" Font-Size="8pt" 
+            ForeColor="#333333" Width="85%" HorizontalAlign="Center">
+			 <EmptyDataTemplate>
+                No hay información para esta consulta.
+            </EmptyDataTemplate>
+            <PagerSettings Mode="NextPrevious" NextPageText="Siguiente" PreviousPageText="Anterior" />
+            <RowStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" Height="15px" HorizontalAlign="Center" VerticalAlign="Middle"  BackColor="White"/>
+            <PagerStyle BackColor="Silver" Font-Names="Verdana" Font-Overline="True" Font-Size="8pt" Font-Underline="True" 
+                ForeColor="#333333" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <SelectedRowStyle BackColor="#6699CC" BorderStyle="Double" ForeColor="#333333" />
+            <HeaderStyle CssClass="Header_Grid" />
+            <AlternatingRowStyle BackColor="#D2D2D2" Font-Names="Verdana" Font-Size="8pt" ForeColor="#333333" 
+                Height="15px" HorizontalAlign="Center" VerticalAlign="Middle" />
+        </asp:GridView>
+
+        <asp:GridView runat="server" CaptionAlign="Bottom" CellPadding="0" Font-Names="Verdana" Font-Size="7pt" SkinID="Asp_Grid-Pequeño"
+            ForeColor="#333333" Height="100%" Width="85%" HorizontalAlign="Left">
+            <EmptyDataTemplate>
+                No hay información para esta consulta.
+            </EmptyDataTemplate>
+            <RowStyle Font-Names="Verdana" Font-Size="7pt" HorizontalAlign="Left" VerticalAlign="Middle" ForeColor="#333333" />
+            <PagerStyle BackColor="Silver" Font-Names="Verdana" Font-Overline="True" Font-Size="8pt" Font-Underline="True" 
+                ForeColor="#333333" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <SelectedRowStyle BorderStyle="Double" ForeColor="#333333" />
+            <HeaderStyle CssClass="Header_Grid" />
+            <AlternatingRowStyle Font-Names="Verdana" Font-Size="7pt" ForeColor="#333333" 
+                HorizontalAlign="Left" VerticalAlign="Middle" />
+        </asp:GridView>
+
+        <asp:GridView runat="server" Width="100%"   CellPadding="0" CellSpacing="0" BorderStyle="None" BorderWidth="0px" SkinID="Asp_Grid-ListaTrabajo">
+            <EmptyDataTemplate>
+                No hay información para esta consulta.
+            </EmptyDataTemplate>
+            <PagerSettings Mode="Numeric" Position="Top" />
+            <PagerStyle BackColor="Silver" Font-Names="Verdana" Font-Overline="True" Font-Size="8pt" Font-Underline="True" 
+                ForeColor="#333333" HorizontalAlign="Center" VerticalAlign="Middle" />
+            <AlternatingRowStyle  Font-Names="Verdana" Font-Size="7pt" Height="27px" VerticalAlign="Middle" HorizontalAlign="Left" CssClass="RowStyleLista" BackColor="White"/>
+            <RowStyle Font-Names="Verdana" Font-Size="7pt" Height="27px" VerticalAlign="Middle" HorizontalAlign="Left" CssClass="RowStyleLista"/>
+        </asp:GridView>
+        

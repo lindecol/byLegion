@@ -49,7 +49,7 @@ return true}
                 </tr>
                 <tr>
                     <td align="center" valign="top">
-                        <asp:Label ID="lblCodigo" runat="server" Font-Size="Small" Text="Código:" ForeColor="Teal" Font-Bold="True"></asp:Label><asp:TextBox ID="txtCodigo" runat="server" Width="80px" AutoPostBack="True" TabIndex="2"></asp:TextBox></td>
+                        <asp:Label ID="lblCodigo" runat="server" Font-Size="Small" Text="Código:" ForeColor="Teal" Font-Bold="True"></asp:Label><asp:TextBox ID="txtCodigo" runat="server" Width="80px" AutoPostBack="True" TabIndex="2" OnTextChanged="txtCodigo_TextChanged1"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td valign="top" align="left">

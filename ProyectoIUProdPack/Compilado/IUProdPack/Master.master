@@ -1,0 +1,222 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="Master, App_Web_baqevwpg" %>
+<%@ Register Src="mnMenu.ascx" TagName="mnMenu" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>PRODUCCION DE PACKAGES</title>
+    <link rel="stylesheet" type="text/css" href="~/Menu/ddlevelsmenu-base.css" />
+    <link rel="stylesheet" type="text/css" href="~/Menu/ddlevelsmenu-topbar.css" />
+    <link rel="stylesheet" type="text/css" href="~/Menu/ddlevelsmenu-sidebar.css" />
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="~/Menu/ddlevelsmenu.js"> 
+    </script>
+
+    <script language="javascript">
+        function ventanaSecundaria (URL){ 
+           window.open(URL,"ventana1","width=70%,height=40%,scrollbars=YES,resizable=YES ") 
+        } 
+         function mostrarMensajePop(p_mensaje) {
+                window.alert(p_mensaje)
+            }
+
+            function cerrar() {
+                if (confirm("Esta seguro de salir?"))
+                    window.close();
+                else
+                    return;
+            }
+
+    </script>
+
+   
+    <style type="text/css">
+		body {font-family: Verdana; font-size: Small; margin: 20px; ForeColor: Teal; Font-Bold: True;}
+		.title {font-size: X-Large; padding: 20px; border-bottom: 2px solid gray;}
+		
+		
+		
+		 .modalPopup
+            {
+                background-color: #ffffff;
+                border-width: 3px;
+                border-style: solid;
+                border-color: Gray;
+                padding: 3px;
+                width: 100px;
+                height: 120px;
+                position: relative;                
+                text-align: center;
+            }
+            
+
+            .updateProgress
+            {
+                
+                
+                border-width: 1px;
+                border-style: solid;
+                background-color: #FFFFFF;
+                position: absolute;
+               
+
+            }
+            </style>
+	
+	
+	
+	
+	
+	   <!-- paola -->
+    <!-- calendar stylesheet -->
+       <link rel="stylesheet" 
+              type="text/css" 
+              media="all" 
+              href="js_calendar/skins/aqua/theme.css" 
+              title="win2k-cold-1" />
+
+        <!-- main calendar program -->
+        <script type="text/javascript"  src="js_calendar/calendar.js"></script>
+
+        <!-- language for the calendar -->
+        <script type="text/javascript" src="js_calendar/lang/calendar-sp.js"></script>
+
+        <!-- the following script defines the Calendar.setup helper function, which makes
+             adding a calendar a matter of 1 or 2 lines of code. -->
+        <script type="text/javascript" src="js_calendar/calendar-setup.js"></script>
+   
+    
+     <!-- paola -->
+	
+	
+	
+	
+	
+	
+	
+	
+</head>
+<body style="left: 0px; top: 0px">
+    <form id="form1" runat="server">
+        <div>
+            <center>
+                <table style="width: 60%; border-right: darkgray 1px solid; border-top: darkgray 1px solid;
+                    border-left: darkgray 1px solid; border-bottom: darkgray 1px solid;" cellpadding="0"
+                    cellspacing="0">
+                    <tr>
+                        <td style="width: 100%; height: 40%; background-image: url(<%=Page.ResolveUrl("~")%>App_Themes/Theme_Praxair/Image/ImagenesMaster/header_bg.jpg);
+                            background-repeat: no-repeat; border-right: gray 1px solid; border-top: gray 1px solid;
+                            border-left: gray 1px solid; border-bottom: gray 1px solid;">
+                            <br />
+                            <br />
+                            <table style="width: 100%; height: 50%">
+                                <tr>
+                                    <td align="left" style="width: 30%;">
+                                        <img alt="PRAXAIR" src="<%=Page.ResolveUrl("~")%>App_Themes/Theme_Praxair/Image/ImagenesMaster/logo_praxair.gif" /></td>
+                                    <td style="width: 20%">
+                                        <asp:Label ID="lblPais" runat="server" Font-Size="XX-Small" Text="Label"></asp:Label>
+                                        <img alt="Colombia" src="<%=Page.ResolveUrl("~")%>App_Themes/Theme_Praxair/Image/ImagenesMaster/Pais-flag.gif" /></td>
+                                    <td style="width: 60%;">
+                                        <asp:Label ID="Label1" runat="server" Font-Size="Large" ForeColor="Black" Text="PRODUCCION PACKAGE"></asp:Label></td>
+                                </tr>
+                            </table>
+                            <br />
+                            <hr style="height: 5%; background-color: #1c5e55" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 60%">
+                            <table cellpadding="0" cellspacing="0" style="width: 100%; background-color: #ebebeb;">
+                                <tr>
+                                    <td align="left">
+                                    </td>
+                                    <td align="right" style="height: 20%">
+                                        <asp:Label ID="Label2" runat="server" Font-Size="X-Small" ForeColor="Black" Text="Labelusuario"></asp:Label></td>
+                                    <td style="height: 20%">
+                                        <img src="<%=Page.ResolveUrl("~")%>App_Themes/Theme_Praxair/Image/salir.jpg"  alt="Salir" onclick="cerrar();"  height="26px" width="30px"  />
+                                <!--    <asp:ImageButton ID="ImageButton1" ImageUrl="App_Themes/Theme_Praxair/Image/ImagenesMaster/salir.jpg"
+                                            OnClick="cerrar();" Height="26px" Width="30px" 
+                                            ClientIDMode="Static" ViewStateMode="Disabled" />--></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 60%">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td  style="width: 20%" align="left" valign="top"> 
+                                        <uc1:mnMenu ID="mnMenu1" runat="server" />
+                                    </td>
+                                    <td style="width: 80%" valign="top">
+                                        <asp:ScriptManager ID="ScriptManager1" runat="server" >
+                                        </asp:ScriptManager>
+                                        
+                                        <div class="contenidos">
+
+                                            <script type="text/javascript">
+                                                var ModalProgress = '<%= ModalProgress.ClientID %>';
+
+                                                Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginReq);
+                                                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endReq);
+
+                                                function beginReq(sender, args) {
+                                                    // shows the Popup
+                                                    $find(ModalProgress).show();
+                                                }
+
+                                                function endReq(sender, args) {
+                                                    //  shows the Popup
+                                                    $find(ModalProgress).hide();
+                                                } 
+                                            </script>
+
+                                            <asp:Panel ID="panelUpdateProgress" runat="server" CssClass="updateProgress" Style="display: none"
+                                                Height="60px" Width="296px">
+                                                <div style="position: relative; text-align: center;">
+                                                    <img src="<%=Page.ResolveUrl("~")%>App_Themes/Theme_Praxair/Image/ajax-loader.gif" style="vertical-align: middle"
+                                                        alt="Procesando" /><br />
+                                                    Procesando datos por favor espere...
+                                                </div>
+                                            </asp:Panel>
+                                            <ajaxtoolkit:ModalPopupExtender ID="ModalProgress" runat="server" TargetControlID="panelUpdateProgress"
+                                                BackgroundCssClass="modalBackground" PopupControlID="panelUpdateProgress" />
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-repeat: no-repeat; height: 15%; border-right: gray 1px solid;
+                            border-top: gray 1px solid; border-left: gray 1px solid; border-bottom: gray 1px solid;
+                            background-color: #ebebeb;">
+                            <br />
+                            <br />
+                            <table style="width: 100%">
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblGrupo" runat="server" Font-Size="XX-Small" ForeColor="Black" Text="lblGrupo"></asp:Label></td>
+                                    <td>
+                                        <asp:Label ID="lblEmpresa" runat="server" Font-Size="XX-Small" ForeColor="Black"
+                                            Text="lblEmpresa"></asp:Label></td>
+                                    <td>
+                                        <asp:Label ID="lblAgencia" runat="server" Font-Size="XX-Small" ForeColor="Black"
+                                            Text="lblAgencia"></asp:Label></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </form>
+</body>
+</html>

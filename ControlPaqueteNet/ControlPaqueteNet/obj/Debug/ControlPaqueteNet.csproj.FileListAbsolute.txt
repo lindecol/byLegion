@@ -391,6 +391,6 @@ C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bi
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.CopyComplete
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.dll
 C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.pdb
+C:\Users\c7ss74\Documents\GitHub\byLegion\ControlPaqueteNet\ControlPaqueteNet\obj\Debug\ControlPaqueteNet.csproj.AssemblyReference.cache

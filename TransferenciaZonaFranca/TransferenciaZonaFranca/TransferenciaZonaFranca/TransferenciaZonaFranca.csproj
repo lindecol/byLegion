@@ -44,12 +44,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.4.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.15.1.4.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SoftManagement.Comunes">
+      <HintPath>..\..\..\..\..\..\..\..\Proyectos\Praxair\TransferenciaZonaFranca\Despliegue\TransferenciaZonaFranca\bin\SoftManagement.Comunes.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -83,6 +103,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="TransferenciasZF.Data">
+      <HintPath>..\..\..\..\..\..\..\..\Proyectos\Praxair\TransferenciaZonaFranca\Despliegue\TransferenciaZonaFranca\bin\TransferenciasZF.Data.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -106,13 +129,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdministracionPallets.aspx" />
+    <Content Include="AdministracionPalletsCerrados.aspx" />
+    <Content Include="BajaPedidos.aspx" />
+    <Content Include="CambiarDestino.aspx" />
+    <Content Include="ConfiguracionPP.aspx" />
+    <None Include="Connected Services\WsPraxair\Service.disco" />
+    <None Include="Connected Services\WsPraxair\configuration91.svcinfo" />
+    <None Include="Connected Services\WsPraxair\configuration.svcinfo" />
+    <None Include="Connected Services\WsPraxair\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="DefaultTransferenciaZF.aspx" />
+    <Content Include="DocumentoTransferencia.aspx" />
+    <Content Include="DocumentoTransferenciaSinFact.aspx" />
+    <Content Include="EliminarTransferenciasOBC.aspx" />
+    <Content Include="_EliminarTransferenciasOBC.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -124,7 +163,47 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="PaginasReportes\AjenosCargadosDet.aspx" />
+    <Content Include="PaginasReportes\CilindrosCargados.aspx" />
+    <Content Include="PaginasReportes\Factura.aspx" />
+    <Content Include="PaginasReportes\FacturaPreliminar.aspx" />
+    <Content Include="PaginasReportes\LotesSeriales.aspx" />
+    <Content Include="PaginasReportes\RecoleccionesAsignaciones.aspx" />
+    <Content Include="PaginasReportes\ReimpresionFactura.aspx" />
+    <Content Include="PaginasReportes\ReimpresionRemito.aspx" />
+    <Content Include="PaginasReportes\Remito.aspx" />
+    <Content Include="PaginasReportes\RemitoAgencia.aspx" />
+    <Content Include="PaginasReportes\RemitoCamion.aspx" />
+    <Content Include="PaginasReportes\Report.aspx" />
+    <Content Include="PaginasReportes\ReporteMovRemitos.aspx" />
+    <Content Include="PaginasReportes\ReportesPedidos.aspx" />
+    <Content Include="PaginasReportes\WebLetin.aspx" />
+    <Content Include="Reportes\Report1.rdlc" />
+    <Content Include="Reportes\ReporteCilindrosCargados.rdlc" />
+    <Content Include="Reportes\ReporteFactura - copia %282%29.rdlc" />
+    <Content Include="Reportes\ReporteFactura - copia.rdlc" />
+    <Content Include="Reportes\ReporteFactura.rdlc" />
+    <Content Include="Reportes\ReporteFactura_20_01_2016.rdlc" />
+    <Content Include="Reportes\ReporteFactura_29_01_2016.rdlc" />
+    <Content Include="Reportes\ReporteFactura_ANTE.rdlc" />
+    <Content Include="Reportes\ReporteLetin.rdlc" />
+    <Content Include="Reportes\ReportePedidos.rdlc" />
+    <Content Include="Reportes\ReporteRemision.rdlc" />
+    <Content Include="Reportes\ReporteRemitoAgencia.rdlc" />
+    <Content Include="Reportes\ReporteRemitoCamión.rdlc" />
+    <Content Include="Reportes\RptAjenosPalletDet.rdlc" />
+    <Content Include="Reportes\RptRelacionSeriesLotes.rdlc" />
+    <Content Include="Reportes\Rpttransferencias_ZF.rdlc" />
+    <Content Include="Reportes\rtpAsig_Recol.rdlc" />
+    <Content Include="Reportes\VistaPreliminarFactura.rdlc" />
+    <Content Include="PaginaMaestra\MasterPageLogin.Master" />
+    <None Include="Connected Services\WsPraxair\Service.wsdl" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="PaginaMaestra\MasterPage.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="ScriptsJqgrid\grid.locale-es.js" />
+    <Content Include="ScriptsJqgrid\jquery.jqGrid.min.js" />
+    <Content Include="ScriptsJqgrid\ui.jqgrid.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -154,12 +233,30 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\ClaseDivs.css" />
+    <Content Include="Styles\jquery.alerts.css" />
+    <Content Include="Styles\Site.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionPallets.aspx.cs">
+      <DependentUpon>AdministracionPallets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionPallets.aspx.designer.cs">
+      <DependentUpon>AdministracionPallets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionPalletsCerrados.aspx.cs">
+      <DependentUpon>AdministracionPalletsCerrados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionPalletsCerrados.aspx.designer.cs">
+      <DependentUpon>AdministracionPalletsCerrados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -169,6 +266,32 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BajaPedidos.aspx.cs">
+      <DependentUpon>BajaPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaPedidos.aspx.designer.cs">
+      <DependentUpon>BajaPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarDestino.aspx.cs">
+      <DependentUpon>CambiarDestino.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambiarDestino.aspx.designer.cs">
+      <DependentUpon>CambiarDestino.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionPP.aspx.cs">
+      <DependentUpon>ConfiguracionPP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfiguracionPP.aspx.designer.cs">
+      <DependentUpon>ConfiguracionPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WsPraxair\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,32 +299,166 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="DefaultTransferenciaZF.aspx.cs">
+      <DependentUpon>DefaultTransferenciaZF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="DefaultTransferenciaZF.aspx.designer.cs">
+      <DependentUpon>DefaultTransferenciaZF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentoTransferencia.aspx.cs">
+      <DependentUpon>DocumentoTransferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentoTransferencia.aspx.designer.cs">
+      <DependentUpon>DocumentoTransferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentoTransferenciaSinFact.aspx.cs">
+      <DependentUpon>DocumentoTransferenciaSinFact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentoTransferenciaSinFact.aspx.designer.cs">
+      <DependentUpon>DocumentoTransferenciaSinFact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarTransferenciasOBC.aspx.cs">
+      <DependentUpon>EliminarTransferenciasOBC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarTransferenciasOBC.aspx.designer.cs">
+      <DependentUpon>EliminarTransferenciasOBC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="PaginaMaestra\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaMaestra\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\AjenosCargadosDet.aspx.cs">
+      <DependentUpon>AjenosCargadosDet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\AjenosCargadosDet.aspx.designer.cs">
+      <DependentUpon>AjenosCargadosDet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\CilindrosCargados.aspx.cs">
+      <DependentUpon>CilindrosCargados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\CilindrosCargados.aspx.designer.cs">
+      <DependentUpon>CilindrosCargados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\FacturaPreliminar.aspx.cs">
+      <DependentUpon>FacturaPreliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\FacturaPreliminar.aspx.designer.cs">
+      <DependentUpon>FacturaPreliminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\LotesSeriales.aspx.cs">
+      <DependentUpon>LotesSeriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\LotesSeriales.aspx.designer.cs">
+      <DependentUpon>LotesSeriales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\RecoleccionesAsignaciones.aspx.cs">
+      <DependentUpon>RecoleccionesAsignaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\RecoleccionesAsignaciones.aspx.designer.cs">
+      <DependentUpon>RecoleccionesAsignaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\ReimpresionFactura.aspx.cs">
+      <DependentUpon>ReimpresionFactura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\ReimpresionFactura.aspx.designer.cs">
+      <DependentUpon>ReimpresionFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\ReimpresionRemito.aspx.cs">
+      <DependentUpon>ReimpresionRemito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\ReimpresionRemito.aspx.designer.cs">
+      <DependentUpon>ReimpresionRemito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\Remito.aspx.cs">
+      <DependentUpon>Remito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\Remito.aspx.designer.cs">
+      <DependentUpon>Remito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\RemitoAgencia.aspx.cs">
+      <DependentUpon>RemitoAgencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\RemitoAgencia.aspx.designer.cs">
+      <DependentUpon>RemitoAgencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\RemitoCamion.aspx.cs">
+      <DependentUpon>RemitoCamion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\RemitoCamion.aspx.designer.cs">
+      <DependentUpon>RemitoCamion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\ReporteMovRemitos.aspx.cs">
+      <DependentUpon>ReporteMovRemitos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\ReporteMovRemitos.aspx.designer.cs">
+      <DependentUpon>ReporteMovRemitos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\ReportesPedidos.aspx.cs">
+      <DependentUpon>ReportesPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\ReportesPedidos.aspx.designer.cs">
+      <DependentUpon>ReportesPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaginasReportes\WebLetin.aspx.cs">
+      <DependentUpon>WebLetin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginasReportes\WebLetin.aspx.designer.cs">
+      <DependentUpon>WebLetin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -220,6 +477,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WsPraxair\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

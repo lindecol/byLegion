@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Copago.Negocio", "Copago.Negocio\Copago.Negocio.csproj", "{16CC0D80-12BD-4122-A49A-379B32928E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisorCopagosV2", "VisorCopagosV2\VisorCopagosV2.csproj", "{E9845E72-38B7-4C11-9847-F23FE4A0EDD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16CC0D80-12BD-4122-A49A-379B32928E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16CC0D80-12BD-4122-A49A-379B32928E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16CC0D80-12BD-4122-A49A-379B32928E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16CC0D80-12BD-4122-A49A-379B32928E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9845E72-38B7-4C11-9847-F23FE4A0EDD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9845E72-38B7-4C11-9847-F23FE4A0EDD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9845E72-38B7-4C11-9847-F23FE4A0EDD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9845E72-38B7-4C11-9847-F23FE4A0EDD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BB3F1AE-FAFB-4A9E-885A-D48495C72F52}
+	EndGlobalSection
+EndGlobal

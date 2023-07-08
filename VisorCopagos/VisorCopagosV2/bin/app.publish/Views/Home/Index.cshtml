@@ -1,0 +1,299 @@
+﻿@{
+    ViewBag.Title = "Contratos Linde";
+}
+<style>
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .centerPlus {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/Pestanas.css" />
+<link rel="stylesheet" href="~/Content/w3.css" />
+
+<div class="row center">
+    <div class="col-md-3">
+        <h3>COPAGOS</h3>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-3">
+        <h3>@User.Identity.Name</h3>
+    </div>
+
+</div>
+<hr />
+
+<div class="row">
+    @*<div class="col-md-3">
+            <label style="margin:10px">Compañia:</label>
+            <br />
+            <select name="CboCompania" id="CboCompania" style="margin-right:15px">
+                <option value="-1">Seleccione</option>
+                <option value="15200">Oxigenos de colombia - Coox</option>
+                <option value="15270">Gas Carbónico - Copg</option>
+                <option value="15290">Liquidos - Colc</option>
+            </select>
+        </div>*@
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+        <label style="margin:5px">Fecha inicial:</label>
+        <br />
+        <input type="date" id="TxtFechaInicial" value="01-01-2000" />
+    </div>
+
+    <div class="col-md-2">
+        <label style="margin:5px">Fecha final:</label>
+        <br />
+        <input type="date" id="TxtFechaFinal" value="01-01-2000" />
+    </div>
+
+    <div class="col-md-2">
+        <label style="margin:5px">Cliente:</label>
+        <br />
+        <input type="text" id="TxtCliente" maxlength="15" />
+    </div>
+    <div class="col-md-2">
+        <label style="margin:5px">Pagado:</label>
+        <br />
+        <input type="checkbox" id="ChkEstado" value="Pagado" />
+    </div>
+    <div class="col-md-2">
+        <br />
+        <button type="button" id="BtnBuscar" class="btn" style="background-color:indigo; color:white; margin-left:15px"><i class="fa fa-search "></i>Buscar</button>
+    </div>
+</div>
+
+<hr />
+<div class="row">
+    <table id="datCopagos" class="display dt-table" style="width:100%; font-size:11px">
+        <thead>
+            <tr>
+                <th style="width:10%;">Documento</th>
+                <th style="width:15%;">Cliente</th>
+                <th style="width:15%;">Fecha registro</th>
+                <th style="width:15%;"># Comprobante</th>
+                <th style="width:10%;">Pagar</th>
+                <th style="width:10%;">Imprimir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><button>Pagar</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal" style="padding-left: 33%">
+    <div class="modal-dialog" style="width:450px">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-10" style="margin:15px">
+                        <span id="TxtPreguntaModal"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/jquery-3.7.0.js"></script>
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.13.2.js"></script>
+    <script src="~/Scripts/jquery-ui-1.13.2.min.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/pooper.min.js"></script>
+    <script src="~/Scripts/Extra/bootstrap.bundle.min.js"></script>
+
+
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var myVar = '';
+        var _usuario = '';
+
+
+        $(document).ready(function () {
+            _usuario = '@User.Identity.Name';
+        });
+
+        function Buscar() {
+            debugger;
+            $('#BtnBuscar').prop('disabled', true);
+            vFi = $('#TxtFechaInicial').val();
+            vFf = $('#TxtFechaFinal').val();
+            vCliente = $('#TxtCliente').val();
+            vPago = $('#ChkEstado').prop('checked');
+
+
+
+            var b = $.post(myVar + '/Home/ListarCopagos', { fI: vFi, fF: vFf, cliente: vCliente, estado: vPago }, function (dat) {
+                if (dat.length > 0) {
+                    $('#datCopagos').DataTable().clear();
+                    var d = dat;
+                    console.log(d);
+                    if (d.length > 0) {
+                        $('#datCopagos').DataTable({
+                            destroy: true,
+                            paging: true,
+                            searching: true,
+                            data: d,
+                            "columns": [
+                                { "data": "Documento", "name": "Documento" },
+                                { "data": "Identificacion", "name": "Identificacion" },
+                                { "data": "FechaRegistroTexto", "name": "FechaRegistro" },
+                                {
+                                    "data": null,
+                                    "defaultContent": "<input type='text' id='TxtValorCopago'/>",
+                                    "targets": -1
+                                }                                
+                                ,
+                                {
+                                    "data": "Estado",
+                                    "mRender": function (data) {
+                                        var palabra = '';
+                                        if (data)
+                                            palabra = 'DISABLED';
+                                        return "<button id='BtnPagar' onClick='PagarCopago(this);' " + palabra + "><i class='fa fa-credit-card'></i></button>";
+                                    } ,
+                                    "targets": -1
+                                },
+                                {
+                                    "data": null,
+                                    "defaultContent": "<button id='BtnImprimir' onClick='ImprimirCopago(this);'><i class='fa fa-print'></i></button>",
+                                    "targets": -1
+                                }
+                            ]
+                        });
+                    }
+                    $('#BtnBuscar').prop('disabled', false);
+                }
+            });
+        }
+
+        function AbrirPopUp() {
+            $("#TxtPreguntaModal").html('<b>Hola mundo<b/>');
+            $("#myModal").dialog({modal: true});
+        }
+
+        $('#BtnBuscar').click(function () {
+            Buscar();
+        })
+
+        function PagarCopago(id) {
+                debugger;
+            var valor = 0;
+            var tipo = 0;
+            var vEstado = 0;
+            var monto = 0;
+            var mensaje = '';
+            var vDocumento = '';
+            var vEmpresa = '';
+            var vCliente = '';
+            tipo = id.parentNode.parentNode.children[6].children[0].children[0].selected;
+            valor = id.parentNode.parentNode.children[5].children[0].value;
+            monto = id.parentNode.parentNode.children[4].innerText;
+
+            if (tipo == true) {
+                mensaje += "\n" + "- Debe seleccionar un estado diferente";
+            }
+            else {
+                for (let i = 0; i <= 2; i++) {
+                    if (id.parentNode.parentNode.children[6].children[0].children[i].selected == true)
+                        vEstado = i;
+                }
+            }
+
+            if (valor == '') {
+                mensaje += "\n" + "- Escribir un valor de copago";
+            }
+            else {
+                if (parseFloat(monto) < parseFloat(valor))
+                    mensaje += "\n" + "- El valor del copago no puede ser mayor al del monto";
+            }
+
+            if (mensaje.length > 0) {
+                alert(mensaje);
+            }
+            else {
+                vDocumento = id.parentNode.parentNode.children[0].innerText;
+                vEmpresa = id.parentNode.parentNode.children[1].innerText;
+                vCliente = id.parentNode.parentNode.children[2].innerText;
+
+                var b = $.post(myVar + '/Home/AdicionarCopago', { documento: vDocumento, empresa: vEmpresa, cliente: vCliente, estado: vEstado, copago: parseFloat(valor) }, function (dat) {
+                    if (dat == true) {
+                        alert('- Copago realizado con éxito');
+                        Buscar();
+                    }
+                    else {
+                        alert('- Problemas con el copago, por favor comuniquese con el Administrador');
+                    }
+                });
+            }
+        }
+
+        function ImprimirCopago(id) {
+            debugger;
+            var valor = 0;
+            var tipo = 0;
+            var vEstado = 0;
+            var monto = 0;
+            var mensaje = '';
+            var vDocumento = '';
+            var vEmpresa = '';
+            var vCliente = '';
+            tipo = id.parentNode.parentNode.children[6].children[0].children[0].selected;
+            valor = id.parentNode.parentNode.children[5].children[0].value;
+            monto = id.parentNode.parentNode.children[4].innerText;
+        }
+
+
+
+    </script>
+
+
+
+}
+
+

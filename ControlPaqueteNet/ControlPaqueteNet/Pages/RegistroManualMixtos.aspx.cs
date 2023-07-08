@@ -1268,5 +1268,10 @@ namespace ControlPaqueteNet.Pages
                 ProjectData.ClearProjectError();
             }
         }
+
+        protected void txtCodigo_TextChanged1(object sender, EventArgs e)
+        {
+            txtCodigo_TextChanged(sender, e);
+        }
     }
 }

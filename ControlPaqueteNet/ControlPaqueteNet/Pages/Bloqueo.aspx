@@ -25,7 +25,7 @@
                                 Cargando información...
                             </ProgressTemplate>
                         </asp:UpdateProgress>
-                        <asp:GridView ID="grCierre" runat="server" AutoGenerateColumns="False" AllowSorting="True" Width="750px">
+                        <asp:GridView ID="grCierre" runat="server" AutoGenerateColumns="False" AllowSorting="True" Width="750px" OnSelectedIndexChanged="grCierre_SelectedIndexChanged1">
                             <Columns>
                                 <asp:BoundField DataField="colProgramacion" HeaderText="C&#243;digo" >
                                     <ControlStyle Width="80px" />

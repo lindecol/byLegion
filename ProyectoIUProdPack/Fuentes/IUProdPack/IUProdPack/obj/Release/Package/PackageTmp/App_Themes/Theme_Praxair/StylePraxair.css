@@ -1,0 +1,78 @@
+﻿body 
+{
+    background-color:White;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+}
+
+.Text
+{
+    color:Navy;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size:small;
+}
+
+.Label
+{
+    color: Navy;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size:small ;    
+}
+
+.Botones
+{
+    color:Navy;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size:small ;    
+}
+
+.Wrapper
+{
+    background-color: blue; 
+    color: white;
+    font-size:20px;
+    font-weight:bold;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+}
+
+.Content
+{
+    padding: 10px; background-color: #FFC
+}
+
+.Title
+{
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size: 20px;
+    color:Maroon;
+}
+
+.Footer
+{
+    background-color: blue; 
+    color: white;
+    font-size:16px;
+    font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+}
+.FONT
+{
+	font-size: small ;
+}
+	
+.DropDownList
+{
+	font-size: small ;
+}
+
+.Grilla
+{
+	font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size:small ;    
+}
+
+H1
+{	font-family: Verdana,  Times New Roman, Helvetica, sans-serif;
+    font-size:larger;    
+    font-style :normal;
+    
+	}
+

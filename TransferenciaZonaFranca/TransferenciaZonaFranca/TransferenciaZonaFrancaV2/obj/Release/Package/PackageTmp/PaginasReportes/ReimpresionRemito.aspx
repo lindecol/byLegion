@@ -1,0 +1,69 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra/MasterPage.Master" AutoEventWireup="true" CodeBehind="ReimpresionRemito.aspx.cs" Inherits="TransferenciaZonaFrancaV2.PaginasReportes.ReimpresionRemito" %>
+
+
+<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+    Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Styles/ClaseDivs.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div  style="width:940px;float:left;margin-left:7%">
+    <div id="Titulos" style="float:left;width:490px" >  Reimpresión Remitos Intercompañias </div>
+    <br />
+      <br />
+        <br />
+         <div  style="float:left;width:300px">
+                    <span ><label for="txtSerie">Número Serie</label></span>        
+                    <span  class="form-el">
+                     <asp:TextBox ID="txtSerie" runat="server"  ></asp:TextBox></span>
+         </div>
+        <div  style="float:left;width:300px">
+                    <span><label for="lblDocumento">Número Remito</label></span>        
+                    <span  class="form-el">
+                     <asp:TextBox ID="lblDocumento" runat="server"  ></asp:TextBox></span>
+                       <span><label for="lblSucursal"></label></span> 
+         </div>
+      
+        <asp:TextBox ID="lblEmpresa" runat="server" Visible="false"></asp:TextBox>
+        <asp:TextBox ID="lblSubdeposito" runat="server" Visible="false"></asp:TextBox>
+
+        <asp:Button ID="btnImprimir" runat="server" Text="Imprimir" 
+            onclick="btnImprimir_Click" />
+             <asp:Label ID="lblmsj" runat="server"></asp:Label>
+
+            <br />
+      <br />
+          <%-- <asp:Label ID="lblDocumento" runat="server" Visible="false" Text="Label"></asp:Label>
+        <asp:Label ID="lblEmpresa" runat="server" Visible="false" Text="Label"></asp:Label>
+        <asp:Label ID="lblSubdeposito" runat="server" Visible="false" Text="Label"></asp:Label>--%>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana"  
+            Font-Size="8pt" Height="577px" InteractiveDeviceInfos="(Colección)" 
+            WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="854px" 
+            ViewStateMode="Enabled"  >
+            <LocalReport ReportPath="Reportes\ReporteRemision.rdlc">
+               <%-- <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                </DataSources>--%>
+            </LocalReport>
+        </rsweb:ReportViewer>
+         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+            OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" >
+            
+           <%-- TypeName="TransferenciasZF.DsRemisionTableAdapters.DataTable1TableAdapter">--%>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="lblEmpresa" Name="EMPRESA" 
+                    PropertyName="Text" Type="Decimal" />
+                <asp:ControlParameter ControlID="lblDocumento" Name="DOCUMENTO" 
+                    PropertyName="Text" Type="String" />
+                     <asp:ControlParameter ControlID="txtSerie" Name="SUCURSAL" 
+                    PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
+         <asp:ScriptManager ID="ScriptManager1" runat="server" ScriptMode="Release">
+    </asp:ScriptManager>
+    </div>
+ 
+
+</asp:Content>
+

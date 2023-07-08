@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.Title = "Contratos Linde";
+}
+<style>
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .centerPlus {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/Pestanas.css" />
+<link rel="stylesheet" href="~/Content/w3.css" />
+
+<div class="row center">
+    <div class="col-md-3">
+        <h3>COPAGOS</h3>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-3">
+        <h3>@User.Identity.Name</h3>
+    </div>
+
+</div>
+<hr />
+
+<div class="row">
+    <label style="margin:10px">Compañia:</label>
+    <select name="CboCompania" id="CboCompania" style="margin-right:15px">
+        <option value="-1">Seleccione</option>
+        <option value="15200">Oxigenos de colombia - Coox</option>
+        <option value="15270">Gas Carbónico - Copg</option>
+        <option value="15290">Liquidos - Colc</option>
+    </select>
+    <label style="margin:5px">Fecha inicial:</label>
+    <input type="date" id="TxtFechaInicial" value="01-01-2000" />
+
+    <label style="margin:5px">Fecha final:</label>
+    <input type="date" id="TxtFechaFinal" value="01-01-2000" />
+
+    <button type="button" id="BtnBuscar" class="btn" style="background-color:indigo; color:white; margin-left:15px"><i class="fa fa-search "></i>Buscar</button>
+</div>
+<hr />
+<div class="row">
+    <table id="datCopagos" class="display dt-table" style="width:90%; font-size:11px">
+        <thead>
+            <tr>
+                <th style="width:20%;">Documento</th>
+                <th style="width:15%;">Empresa</th>
+                <th style="width:15%;">Cliente</th>
+                <th style="width:15%;">Fecha registro</th>
+                <th style="width:15%;">Monto</th>
+                <th style="width:15%;">Copago</th>
+                <th style="width:15%;">Estado</th>
+                <th style="width:10%;">Pagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><button>Pagar</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+@section scripts{
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var myVar = '';
+        var _usuario = '';
+
+
+        $(document).ready(function () {
+            _usuario = '@User.Identity.Name';
+        });
+
+
+        $('#BtnBuscar').click(function () {
+            debugger;
+
+            var vEmpresa = $('#CboCompania').val();
+            vFi = $('#TxtFechaInicial').val();
+            vFf = $('#TxtFechaFinal').val();
+
+            var b = $.post(myVar + '/Home/ListarCopagos', { empresa: vEmpresa, fI: vFi, fF: vFf }, function (dat) {
+                if (d.length > 0) {
+                    $('#datCopagos').DataTable().clear();
+                    var data = d;
+                    if (d.length > 0) {
+                        $('#datCopagos').DataTable({
+                            destroy: true,
+                            paging: true,
+                            searching: true,
+                            data: data,
+                            "columns": [
+                                { "data": "Documento", "name": "Documento" },
+                                { "data": "Empresa", "name": "Empresa" },
+                                { "data": "Identificacion", "name": "Identificacion" },
+                                { "data": "FechaRegistro", "name": "FechaRegistro" },
+                                { "data": "Monto", "name": "Monto" }
+                                ,
+                                {
+                                    "data": null,
+                                    "defaultContent": "<input type='text' id='TxtValorCopago'/>",
+                                    "targets": -1
+                                }
+                                ,
+                                {
+                                    "data": null,
+                                    "defaultContent": "<select id='cboEstado' name='cboEstado'><option value='0'>Sin pagar</option><option value='1'>Apartado</option><option value='2'>Pagado</option></select >",
+                                    "targets": -1
+                                }
+                                ,
+                                {
+                                    "data": null,
+                                    "defaultContent": "<button id='BtnPagar' onClick='PagarCopago(this);'><i class='fa fa-money-bill'></i></button>",
+                                    "targets": -1
+                                }
+                            ]
+                        });
+                    }
+                }
+            });
+        })
+
+        function PagarCopago(id) {
+            alert(id);
+        }
+
+    </script>
+
+
+        
+}
+        
+

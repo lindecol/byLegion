@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="TransferenciasZF.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="TransferenciaZonaFranca.Global" Language="C#" %>
