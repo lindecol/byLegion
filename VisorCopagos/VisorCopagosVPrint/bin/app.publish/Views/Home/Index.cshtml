@@ -1,0 +1,449 @@
+﻿@{
+    ViewBag.Title = "Copagos Linde";
+}
+<style>
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+
+    .centerPlus {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/Pestanas.css" />
+<link rel="stylesheet" href="~/Content/w3.css" />
+
+<div class="row center">
+    <div class="col-md-3">
+        <h3>COPAGOS</h3>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-3">
+        <h3>@User.Identity.Name</h3>
+    </div>
+
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <!--<div class="col-md-2">-->
+        @*<label style="margin:5px">Fecha inicial:</label>
+        <br />
+        <input type="date" id="TxtFechaInicial" value="01-01-2000" />*@
+    <!--</div>
+
+    <div class="col-md-2">-->
+        @*<label style="margin:5px">Fecha final:</label>
+        <br />
+        <input type="date" id="TxtFechaFinal" value="01-01-2000" />*@
+    <!--</div>-->
+
+    <div class="col-md-2">
+        <label style="margin:5px">Cliente:</label>
+        <br />
+        <input type="text" id="TxtCliente" maxlength="15" />
+    </div>
+    <div class="col-md-2">
+        <label style="margin:5px">Pagado:</label>
+        <br />
+        <input type="checkbox" id="ChkEstado" value="Pagado" />
+    </div>
+    <div class="col-md-2">
+        <br />
+        <button type="button" id="BtnBuscar" class="btn" style="background-color:indigo; color:white; margin-left:15px"><i class="fa fa-search "></i>Buscar</button>
+    </div>
+</div>
+
+<hr />
+<div class="row" style="margin-left:15px">
+    <table id="datCopagos" class="display dt-table" style="width:920px; font-size:11px">
+        <thead>
+            <tr>
+                <th style="width:10%;">Documento</th>
+                <th style="width:10%;">Cliente</th>
+                <th style="width:10%;">NombreCliente</th>
+                <th style="width:10%;">Fecha registro</th>
+                <th style="width:10%;">Valor $</th>
+                <th style="width:10%;"># Comprobante</th>
+                <th style="width:10%;"># Recibo</th>
+                <th style="width:10%;">Pagar</th>
+                <th style="width:10%;">Imprimir</th>
+                <th style="width:10%;">Agendar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td><button>Pagar</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="DivMensaje" role="dialog" style="width:90%">
+    <div class="modal-dialog" style="width:100%">
+        <!-- Modal content-->
+        <div class="modal-content" style="width:200%">
+            <div class="modal-header">
+                <h4 class="modal-title">Impresion</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="" id="Impresion">
+                    <div class="row" style="padding-left:30px; width:100%">
+                        <table style="border-style:dotted">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        OXIGENOS DE COLOMBIA LTDA
+                                    </td>
+                                    <td style="padding-left:10px">
+                                        RECIBO DE CAJA NUMERO: <span id="spaRecibo"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="row" style="padding-left:50px">
+                        <div class="col-md-5">
+                            Fecha: <span id="spaFecha"></span>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:50px">
+                        <div class="col-md-5">
+                            Cliente: <span id="spaCliente"></span>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left:50px">
+                        <div class="col-md-5">
+                            Cliente: <span id="spaNombre"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="padding-left:50px">
+                        <div class="col-md-5">
+                            Documento: <span id="spaDoc"></span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row" style="padding-left:50px">
+                        <table style="border-bottom-style: dotted">
+                            <thead>
+                                <tr>
+                                    <td>
+                                        <b>CONCEPTO</b>
+                                    </td>
+                                    <td>
+                                        <b>VALOR</b>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>COPAGO</td>
+                                    <td><span id="spaMonto"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <br />
+                    <div class="row" style="padding-left:30px; width:100%">
+                        <table style="border-style: dotted">
+                            <thead>
+                                <tr>
+                                    <td style="padding-left:200px">
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>QUIEN ENTREGA</b>
+                                    </td>
+                                    <td style="padding-left:200px">
+                                        <b>RECIBIDO</b>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>________________</td>
+                                    <td>________________ </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                    <div class="modal-footer" style="padding-right:100px">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="BtnCerrarImpresor">Cerrar</button>
+                        <button type="button" class="btn" id="BtnImprimir">Imprimir</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        var myVar = '';
+        var _usuario = '';
+
+
+        $(document).ready(function () {
+            _usuario = '@User.Identity.Name';
+        });
+
+        function Buscar() {
+            debugger;
+            $('#BtnBuscar').prop('disabled', true);
+            //vFi = $('#TxtFechaInicial').val();
+            //vFf = $('#TxtFechaFinal').val();
+            vCliente = $('#TxtCliente').val();
+            vPago = $('#ChkEstado').prop('checked');
+
+
+
+            //var b = $.post(myVar + '/Home/ListarCopagos', { fI: vFi, fF: vFf, cliente: vCliente, estado: vPago }, function (dat) {
+            var b = $.post(myVar + '/Home/ListarCopagos', { cliente: vCliente, estado: vPago }, function (dat) {
+                $('#datCopagos').DataTable().clear().draw();
+                if (dat.length > 0) {
+                    var d = dat;
+                    console.log(d);
+                    if (d.length > 0) {
+                        $('#BtnBuscar').prop('disabled', true);
+                        $('#datCopagos').DataTable({
+                            destroy: true,
+                            paging: true,
+                            searching: true,
+                            data: d,
+                            "columns": [
+                                { "data": "Documento", "name": "Documento" },
+                                { "data": "Identificacion", "name": "Identificacion" },
+                                { "data": "nombreCliente", "name": "nombreCliente" },
+                                { "data": "FechaRegistroTexto", "name": "FechaRegistro" },
+                                { "data": "Monto", "name": "Monto" },
+                                {
+                                    "data": "ValorCopago",
+                                    "mRender": function (data) {
+                                        var valor = data;
+                                        var palabra = '';
+
+                                        if (valor != '-')
+                                            palabra = 'DISABLED';
+
+                                        return "<input type='text' id='TxtValorCopago' value='" + valor + "' " + palabra + "/>";
+                                    },
+                                    "targets": -1
+                                },
+                                { "data": "numeroRecibo", "name": "numeroRecibo" },
+                                {
+                                    "data": "Estado",
+                                    "mRender": function (data) {
+                                        var palabra = '';
+                                        if (data == 1) {
+                                            palabra = 'DISABLED';
+                                        }
+                                        else if (data == 2) {
+                                            palabra = 'DISABLED';
+                                        }
+                                        else {
+                                            palabra = '';
+                                        }
+                                            
+                                        return "<button id='BtnPagar' onClick='PagarCopago(this);' " + palabra + "><i class='fa fa-credit-card'></i></button>";
+                                    } ,
+                                    "targets": -1
+                                },
+                                {
+                                    "data": "Estado",
+                                    "mRender": function (data) {
+                                        var palabra = '';
+                                        if (data == 0) {
+                                            palabra = 'DISABLED';
+                                        }
+                                        else {
+                                            palabra = '';
+                                        }
+
+                                        return "<button id='BtnImprimir' onClick='ImprimirCopago(this);' " + palabra + "  data-toggle='modal' data-target='#DivMensaje'><i class='fa fa-print'></i></button>";
+                                    }
+                                },
+                                {
+                                    "data": "Estado",
+                                    "mRender": function (data) {
+                                        var palabra = '';
+                                        if (data == 0) {
+                                            palabra = 'DISABLED';
+                                        }
+                                        else if (data == 2) {
+                                            palabra = 'DISABLED';
+                                        }
+                                        else {
+                                            palabra = '';
+                                        }
+                                        return "<button id='BtnAgendar' onClick='AgendrCopago(this);' " + palabra + "  data-toggle='modal' data-target='#DivMensaje'><i class='fa fa-book'></i></button>";
+                                    },
+                                    "targets": -1
+                                }
+                            ]
+                        });
+                    }
+                }
+                $('#BtnBuscar').prop('disabled', false);
+            });
+        }
+
+        function AbrirPopUp() {
+            $("#TxtPreguntaModal").html('<b>Hola mundo<b/>');
+            $("#myModal").dialog({modal: true});
+        }
+
+        $('#BtnBuscar').click(function () {
+            Buscar();
+        })
+
+        function PagarCopago(id) {
+                debugger;
+            var valor = 0;
+            var tipo = 0;
+            var vEstado = 0;
+            var monto = 0;
+            var mensaje = '';
+            var vDocumento = '';
+            var vEmpresa = '';
+            var vCliente = '';
+
+            //tipo = id.parentNode.parentNode.children[3].children[0].children[0].selected;
+            tipo = 1;
+            valor = id.parentNode.parentNode.children[5].children[0].value;
+            monto = id.parentNode.parentNode.children[4].innerText;
+
+
+
+            if (valor == '') {
+                mensaje += "\n" + "- Escribir un valor de copago";
+            }
+
+
+            if (mensaje.length > 0) {
+                alert(mensaje);
+                return;
+            }
+            else {
+                vDocumento = id.parentNode.parentNode.children[0].innerText;
+                vEmpresa = id.parentNode.parentNode.children[1].innerText;
+                vCliente = id.parentNode.parentNode.children[2].innerText;
+
+                var b = $.post(myVar + '/Home/AdicionarCopago', { documento: vDocumento, empresa: vEmpresa, cliente: vCliente, estado: vEstado, copago: valor }, function (dat) {
+                    if (dat == true) {
+                        alert('- Copago realizado con éxito');
+                        Buscar();
+                    }
+                    else {
+                        alert('- Problemas con el copago, por favor comuniquese con el Administrador');
+                    }
+                });
+            }
+        }
+
+        function ImprimirCopago(id) {
+            debugger;
+            var valor = 0;
+            var tipo = 0;
+            var vDocumento = '';
+            var vCliente = '';
+
+            var nomCliente = '';
+            var numRecibo = '';
+
+            vDocumento = id.parentNode.parentNode.children[0].innerText;
+            vCliente = id.parentNode.parentNode.children[1].innerText;
+            tipo = true;
+            valor = id.parentNode.parentNode.children[4].innerText;
+            monto = id.parentNode.parentNode.children[5].children[0].value;
+            nomCliente = id.parentNode.parentNode.children[2].innerText;
+            numRecibo = id.parentNode.parentNode.children[6].innerText;
+
+            var d = new Date();
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+            var fecha = d.getFullYear() + '/' +                 (month < 10 ? '0' : '') + month + '/' +                 (day < 10 ? '0' : '') + day;
+
+            $('#spaFecha').html('<b>' + fecha + '</b>');
+            $('#spaCliente').html('<b>' + vCliente + '</b>');
+            $('#spaPag').html('<b>' + tipo + '</b>');
+            $('#spaDoc').html('<b>' + vDocumento + '</b>');
+            $('#spaMonto').html('<b>' + valor + '</b>');
+            $('#spaNombre').html('<b>' + nomCliente + '</b>');
+            $('#spaRecibo').html('<b>' + numRecibo + '</b>');
+            /*$('#spaValor').html('<b>' + monto + '</b>');*/
+
+            //debugger;
+            $('#DivMensaje').modal({ show: true });
+        }
+
+        $('#BtnImprimir').click(function () {
+            $('#BtnCerrarImpresor').css('visibility', 'hidden');
+            $('#BtnImprimir').hidden;
+            var estilo = "";
+            var contenido = estilo  + " " + $('#Impresion').html();
+            var impresor = window.open('', '_blank');
+            impresor.document.write(contenido);
+            impresor.document.close();
+            impresor.print();
+            impresor.close();
+            $('#BtnCerrarImpresor').css('visibility', 'visible');
+            $('#BtnImprimir').css('visibility', 'visible');
+        });
+
+        function AgendrCopago(id) {
+            vDocumento = id.parentNode.parentNode.children[0].innerText;
+            var b = $.post(myVar + '/Home/AgendarCopago', { documento: vDocumento}, function (dat) {
+                if (dat == true) {
+                    alert('- Documento marcado con agendamiento');
+                    Buscar();
+                }
+                else {
+                    alert('- Problemas al realizar el agendamiento, por favor comuniquese con el Administrador');
+                }
+            });
+        };
+
+    </script>
+
+
+
+}

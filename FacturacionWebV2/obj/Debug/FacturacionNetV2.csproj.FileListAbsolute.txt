@@ -1,0 +1,14 @@
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\FacturacionWebV2.exe.config
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\FacturacionWebV2.exe
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\FacturacionWebV2.pdb
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.EnvironmentalOverrides.dll
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionNetV2.csproj.AssemblyReference.cache
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionWebV2.Properties.Resources.resources
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionNetV2.csproj.GenerateResource.cache
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionNetV2.csproj.CoreCompileInputs.cache
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionNetV2.csproj.CopyComplete
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionWebV2.exe
+C:\Users\c7ss74\Documents\GitHub\byLegion\FacturacionWebV2\obj\Debug\FacturacionWebV2.pdb

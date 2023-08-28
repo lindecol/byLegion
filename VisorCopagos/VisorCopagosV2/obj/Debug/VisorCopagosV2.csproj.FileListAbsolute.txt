@@ -105,4 +105,3 @@ C:\Users\c7ss74\Documents\GitHub\byLegion\VisorCopagos\VisorCopagosV2\bin\System
 C:\Users\c7ss74\Documents\GitHub\byLegion\VisorCopagos\VisorCopagosV2\bin\System.Text.Json.xml
 C:\Users\c7ss74\Documents\GitHub\byLegion\VisorCopagos\VisorCopagosV2\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\c7ss74\Documents\GitHub\byLegion\VisorCopagos\VisorCopagosV2\bin\System.ValueTuple.xml
-C:\Users\c7ss74\Documents\GitHub\byLegion\VisorCopagos\VisorCopagosV2\obj\Debug\VisorCopagosV2.csproj.CopyComplete

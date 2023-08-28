@@ -80,6 +80,7 @@
                 <th style="width:10%;">Documento</th>
                 <th style="width:15%;">Cliente</th>
                 <th style="width:15%;">Fecha registro</th>
+                <th style="width:15%;">Valor $</th>
                 <th style="width:15%;"># Comprobante</th>
                 <th style="width:10%;">Pagar</th>
                 <th style="width:10%;">Imprimir</th>
@@ -87,6 +88,7 @@
         </thead>
         <tbody>
             <tr>
+                <td>-</td>
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
@@ -100,33 +102,27 @@
 </div>
 
 <!-- The Modal -->
-<div class="modal" id="myModal" style="padding-left: 33%">
-    <div class="modal-dialog" style="width:450px">
+<div class="modal fade" id="DivMensaje" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
         <div class="modal-content">
-
-            <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
             </div>
-
-            <!-- Modal body -->
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-xs-10" style="margin:15px">
-                        <span id="TxtPreguntaModal"></span>
-                    </div>
-                </div>
+                <p>Some text in the modal.</p>
             </div>
-
-            <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-
         </div>
+
     </div>
 </div>
+
+
 
 
 @section scripts{
@@ -136,18 +132,20 @@
     <script src="~/Scripts/jquery-ui-1.13.2.min.js"></script>
     <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
 
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/Scripts/pooper.min.js"></script>
-    <script src="~/Scripts/Extra/bootstrap.bundle.min.js"></script>
 
-
-    <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
     <link href="~/Content/Site.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 
     <link href="~/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>*@
+
 
     <script type="text/javascript">
         var myVar = '';
@@ -174,6 +172,7 @@
                     var d = dat;
                     console.log(d);
                     if (d.length > 0) {
+                        $('#BtnBuscar').prop('disabled', true);
                         $('#datCopagos').DataTable({
                             destroy: true,
                             paging: true,
@@ -183,17 +182,18 @@
                                 { "data": "Documento", "name": "Documento" },
                                 { "data": "Identificacion", "name": "Identificacion" },
                                 { "data": "FechaRegistroTexto", "name": "FechaRegistro" },
+                                { "data": "Monto", "name": "Monto" },
                                 {
                                     "data": null,
                                     "defaultContent": "<input type='text' id='TxtValorCopago'/>",
                                     "targets": -1
-                                }                                
+                                }
                                 ,
                                 {
                                     "data": "Estado",
                                     "mRender": function (data) {
                                         var palabra = '';
-                                        if (data)
+                                        if (data==1)
                                             palabra = 'DISABLED';
                                         return "<button id='BtnPagar' onClick='PagarCopago(this);' " + palabra + "><i class='fa fa-credit-card'></i></button>";
                                     } ,
@@ -201,13 +201,13 @@
                                 },
                                 {
                                     "data": null,
-                                    "defaultContent": "<button id='BtnImprimir' onClick='ImprimirCopago(this);'><i class='fa fa-print'></i></button>",
+                                    "defaultContent": "<button id='BtnImprimir' onClick='ImprimirCopago(this);'  data-toggle='modal' data-target='#DivMensaje'><i class='fa fa-print'></i></button>",
                                     "targets": -1
                                 }
                             ]
                         });
+                        $('#BtnBuscar').prop('disabled', false);
                     }
-                    $('#BtnBuscar').prop('disabled', false);
                 }
             });
         }
@@ -231,19 +231,20 @@
             var vDocumento = '';
             var vEmpresa = '';
             var vCliente = '';
-            tipo = id.parentNode.parentNode.children[6].children[0].children[0].selected;
-            valor = id.parentNode.parentNode.children[5].children[0].value;
-            monto = id.parentNode.parentNode.children[4].innerText;
+            //tipo = id.parentNode.parentNode.children[3].children[0].children[0].selected;
+            tipo = 1;
+            valor = id.parentNode.parentNode.children[4].children[0].value;
+            monto = id.parentNode.parentNode.children[3].innerText;
 
-            if (tipo == true) {
-                mensaje += "\n" + "- Debe seleccionar un estado diferente";
-            }
-            else {
-                for (let i = 0; i <= 2; i++) {
-                    if (id.parentNode.parentNode.children[6].children[0].children[i].selected == true)
-                        vEstado = i;
-                }
-            }
+            //if (tipo == true) {
+            //    mensaje += "\n" + "- Debe seleccionar un estado diferente";
+            //}
+            //else {
+            //    for (let i = 0; i <= 2; i++) {
+            //        if (id.parentNode.parentNode.children[6].children[0].children[i].selected == true)
+            //            vEstado = i;
+            //    }
+            //}
 
             if (valor == '') {
                 mensaje += "\n" + "- Escribir un valor de copago";
@@ -274,7 +275,7 @@
         }
 
         function ImprimirCopago(id) {
-            debugger;
+
             var valor = 0;
             var tipo = 0;
             var vEstado = 0;
@@ -283,9 +284,13 @@
             var vDocumento = '';
             var vEmpresa = '';
             var vCliente = '';
-            tipo = id.parentNode.parentNode.children[6].children[0].children[0].selected;
-            valor = id.parentNode.parentNode.children[5].children[0].value;
-            monto = id.parentNode.parentNode.children[4].innerText;
+            tipo = id.parentNode.parentNode.children[5].children[0].disabled;
+            valor = id.parentNode.parentNode.children[3].innerText;
+            monto = id.parentNode.parentNode.children[4].children[0].value
+
+            //debugger;
+            //$('#DivMensaje').modal({ show: true });
+
         }
 
 

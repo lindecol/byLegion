@@ -15,11 +15,14 @@ namespace Copago.Negocio.Objetos
         public int Empresa { get; set; }
         public DateTime FechaRegistro { get; set; }
         public string Monto { get; set; }
-        public double ValorCopago { get; set; }
+        public string ValorCopago { get; set; }
 
         public string FechaRegistroTexto { get {
                 return FechaRegistro.ToShortDateString();
             }
         }
+
+        public string nombreCliente { get; set; }
+        public string numeroRecibo { get; set; }
     }
 }
